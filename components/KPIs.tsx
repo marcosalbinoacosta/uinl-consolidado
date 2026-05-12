@@ -4,7 +4,7 @@ import { pct } from "@/lib/format";
 export function KPIs({ data }: { data: ReporteData }) {
   const total = data.participantes.length;
   const contactados = data.participantes.filter(p => p.contacto.estado === "contactado").length;
-  const alta = data.participantes.filter(p => p.contacto.estado === "alta_prioridad").length;
+  const alta = data.participantes.filter(p => p.contacto.alta_prioridad === true).length;
   const noInteresados = data.participantes.filter(p => p.contacto.estado === "no_interesado").length;
   const standTotal = data.stand_contactos.length;
   const standPaises = new Set(data.stand_contactos.map(s => s.pais_id).filter(Boolean)).size;

@@ -1,4 +1,4 @@
-export type EstadoContacto = "pendiente" | "contactado" | "alta_prioridad" | "no_interesado";
+export type EstadoContacto = "pendiente" | "contactado" | "no_interesado";
 
 export interface Pais {
   id: string;
@@ -55,6 +55,7 @@ export interface Participacion {
 export interface Contacto {
   participante_id: string;
   estado: EstadoContacto;
+  alta_prioridad: boolean;
   representante_id: string | null;
   updated_at: string;
 }

@@ -84,6 +84,7 @@ export async function getReporteData(): Promise<ReporteData> {
     contacto: contactoByPart.get(p.id) ?? {
       participante_id: p.id,
       estado: "pendiente",
+      alta_prioridad: false,
       representante_id: null,
       updated_at: p.created_at,
     },

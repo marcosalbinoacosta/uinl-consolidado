@@ -1,15 +1,14 @@
 "use client";
 import { useMemo, useState } from "react";
 import type { ParticipanteEnriquecido } from "@/lib/types";
-import { EstadoBadge } from "./EstadoBadge";
+import { EstadoBadge, AltaPrioridadBadge } from "./EstadoBadge";
 import { fechaHora } from "@/lib/format";
 
 const ESTADOS = [
-  { v: "todos",          label: "Todos los estados" },
-  { v: "pendiente",      label: "Pendientes" },
-  { v: "contactado",     label: "Contactados" },
-  { v: "alta_prioridad", label: "Alta prioridad" },
-  { v: "no_interesado",  label: "No interesados" },
+  { v: "todos",         label: "Todos los estados" },
+  { v: "pendiente",     label: "Pendientes" },
+  { v: "contactado",    label: "Contactados" },
+  { v: "no_interesado", label: "No interesados" },
 ];
 
 function norm(s: string | null | undefined): string {
@@ -20,6 +19,7 @@ export function TablaParticipantes({ participantes }: { participantes: Participa
   const [search, setSearch] = useState("");
   const [estado, setEstado] = useState("todos");
   const [soloConNotas, setSoloConNotas] = useState(false);
+  const [soloAlta, setSoloAlta] = useState(false);
   const [expandido, setExpandido] = useState<string | null>(null);
 
   const filtered = useMemo(() => {
@@ -27,13 +27,20 @@ export function TablaParticipantes({ participantes }: { participantes: Participa
     return participantes.filter(p => {
       if (estado !== "todos" && p.contacto.estado !== estado) return false;
       if (soloConNotas && p.notas.length === 0) return false;
+      if (soloAlta && !p.contacto.alta_prioridad) return false;
       if (q) {
         const hay = norm(`${p.nombre_completo} ${p.pais_label ?? ""} ${p.cargo_principal ?? ""} ${p.organizacion ?? ""}`);
         if (!hay.includes(q)) return false;
       }
       return true;
-    }).sort((a, b) => b.prioridad_score - a.prioridad_score || a.nombre_completo.localeCompare(b.nombre_completo));
-  }, [participantes, search, estado, soloConNotas]);
+    }).sort((a, b) => {
+      // 1) alta_prioridad arriba, 2) prioridad_score desc, 3) nombre
+      if (a.contacto.alta_prioridad !== b.contacto.alta_prioridad) {
+        return a.contacto.alta_prioridad ? -1 : 1;
+      }
+      return b.prioridad_score - a.prioridad_score || a.nombre_completo.localeCompare(b.nombre_completo);
+    });
+  }, [participantes, search, estado, soloConNotas, soloAlta]);
 
   return (
     <section className="overflow-hidden rounded-xl border border-slate-200 bg-white">
@@ -57,6 +64,10 @@ export function TablaParticipantes({ participantes }: { participantes: Participa
           >
             {ESTADOS.map(e => <option key={e.v} value={e.v}>{e.label}</option>)}
           </select>
+          <label className="inline-flex items-center gap-1.5 text-xs text-slate-600">
+            <input type="checkbox" checked={soloAlta} onChange={e => setSoloAlta(e.target.checked)} className="rounded" />
+            Solo alta prioridad
+          </label>
           <label className="inline-flex items-center gap-1.5 text-xs text-slate-600">
             <input type="checkbox" checked={soloConNotas} onChange={e => setSoloConNotas(e.target.checked)} className="rounded" />
             Solo con notas
@@ -91,7 +102,10 @@ export function TablaParticipantes({ participantes }: { participantes: Participa
                   </td>
                   <td className="px-4 py-2.5 text-slate-600">{p.pais_label ?? "—"}</td>
                   <td className="px-4 py-2.5 text-slate-600">{p.cargo_principal ?? "—"}</td>
-                  <td className="px-4 py-2.5"><EstadoBadge estado={p.contacto.estado} /></td>
+                  <td className="px-4 py-2.5">
+                    <EstadoBadge estado={p.contacto.estado} />
+                    {p.contacto.alta_prioridad && <AltaPrioridadBadge />}
+                  </td>
                   <td className="px-4 py-2.5 text-right font-num text-slate-700">{p.notas.length}</td>
                   <td className="px-4 py-2.5 text-right font-num font-semibold text-slate-900">{p.prioridad_score}</td>
                 </tr>,
