@@ -1,15 +1,43 @@
+import { notFound } from "next/navigation";
+import { getReporteData } from "@/lib/queries";
+import { fechaHora } from "@/lib/format";
+import { KPIs } from "@/components/KPIs";
+import { TablaParticipantes } from "@/components/TablaParticipantes";
+import { HeaderActions } from "@/components/HeaderActions";
+
+export const dynamic = "force-dynamic";
+
+const SLUG_VALIDO = "bolivia-2026";
+
 type Props = { params: { slug: string } };
 
-export default function ReportePage({ params }: Props) {
+export default async function ReportePage({ params }: Props) {
+  if (params.slug !== SLUG_VALIDO) notFound();
+
+  const data = await getReporteData();
+
   return (
-    <main className="mx-auto max-w-5xl px-6 py-10">
-      <header className="rounded-2xl border border-slate-200 bg-white p-6">
-        <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">UINL · Bolivia 2026</p>
-        <h1 className="mt-1 text-3xl font-bold">Consolidado · {params.slug}</h1>
-        <p className="mt-2 text-sm text-slate-500">
-          Placeholder. La página real con KPIs, tabla de participantes, notas, stand y exports llega en el siguiente commit.
-        </p>
+    <main className="mx-auto max-w-7xl px-6 py-8">
+      <header className="mb-6 flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">UINL · Bolivia 2026</p>
+          <h1 className="mt-1 text-3xl font-bold text-slate-900">Consolidado del congreso</h1>
+          <p className="mt-1 text-xs text-slate-500">
+            Última actualización: {fechaHora(data.generado_en)} · datos en vivo de Supabase
+          </p>
+        </div>
+        <HeaderActions />
       </header>
+
+      <KPIs data={data} />
+
+      <div className="mt-6">
+        <TablaParticipantes participantes={data.participantes} />
+      </div>
+
+      <footer className="mt-10 text-center text-xs text-slate-400">
+        Próximos: cronología de notas · stand F.0024-02 · vistas por organismo/país/representante · export Excel
+      </footer>
     </main>
   );
 }
