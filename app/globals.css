@@ -7,12 +7,43 @@ html, body {
   color: #0b1b3b;
 }
 
-/* Print stylesheet - se aplica cuando el usuario imprime / guarda como PDF */
+/* Print stylesheet — se aplica cuando el usuario imprime o guarda como PDF */
 @media print {
+  @page {
+    size: A4;
+    margin: 14mm 12mm;
+  }
+
+  body {
+    background: white !important;
+    color: #0b1b3b !important;
+    font-size: 10.5pt;
+  }
+
   .no-print { display: none !important; }
-  body { background: white; }
-  a { color: inherit; text-decoration: none; }
-  .page-break { page-break-after: always; }
+
+  /* Links sin subrayado / color */
+  a { color: inherit !important; text-decoration: none !important; }
+
+  /* Sombras y gradientes no se imprimen bien */
+  .shadow, .shadow-sm, .shadow-md, .shadow-lg {
+    box-shadow: none !important;
+  }
+
+  /* Headings no se cortan a media página */
+  h1, h2, h3 { page-break-after: avoid; }
+
+  /* Cards más compactas */
+  .rounded-xl, .rounded-2xl {
+    border-radius: 4px !important;
+  }
+
+  /* Tablas que repiten su header en cada página */
   thead { display: table-header-group; }
   tr, td, th { page-break-inside: avoid; }
+
+  /* Section breaks suaves */
+  section {
+    break-inside: avoid-page;
+  }
 }

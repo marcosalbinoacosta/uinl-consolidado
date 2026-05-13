@@ -46,7 +46,7 @@ export default async function ReportePage({ params }: Props) {
         <HotLeads leads={leads} participantes={data.participantes} />
         <CoberturaObjetivos participantes={data.participantes} />
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 print:grid-cols-1">
           <MercadosVirgenes />
           <Multiplicadores />
         </div>
@@ -54,7 +54,9 @@ export default async function ReportePage({ params }: Props) {
         <ProximosPasos />
         <RankingEquipo data={data} />
 
-        <div className="pt-2">
+        {/* Drill-down: solo visible en pantalla. En PDF queda fuera para
+            mantener el documento como reporte ejecutivo, no volcado crudo. */}
+        <div className="pt-2 no-print">
           <h2 className="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-400">
             Detalle completo · datos crudos
           </h2>

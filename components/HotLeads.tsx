@@ -32,7 +32,7 @@ export function HotLeads({ leads, participantes }: Props) {
         </div>
       </header>
 
-      <div className="grid gap-3 md:grid-cols-2">
+      <div className="grid gap-3 md:grid-cols-2 print:grid-cols-1">
         {leads.map(lead => {
           const p = partById.get(lead.participante_id);
           const abierto = expandido === lead.participante_id;
