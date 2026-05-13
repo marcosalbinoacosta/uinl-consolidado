@@ -8,7 +8,7 @@ export const runtime = "nodejs";
 export async function GET() {
   try {
     const data = await getReporteData();
-    const buffer = buildXlsx(data);
+    const buffer = await buildXlsx(data);
     const filename = `UINL-Bolivia-2026-${new Date().toISOString().slice(0, 10)}.xlsx`;
     // Cast a BlobPart — TS distingue Uint8Array<ArrayBufferLike> vs <ArrayBuffer>,
     // pero a runtime es el mismo Uint8Array y la API lo acepta.
