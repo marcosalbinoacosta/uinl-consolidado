@@ -5,6 +5,9 @@ import { fechaHora } from "@/lib/format";
 import { HeadlineBanner } from "@/components/HeadlineBanner";
 import { KPIs } from "@/components/KPIs";
 import { HotLeads } from "@/components/HotLeads";
+import { CoberturaObjetivos } from "@/components/CoberturaObjetivos";
+import { MercadosVirgenes } from "@/components/MercadosVirgenes";
+import { Multiplicadores } from "@/components/Multiplicadores";
 import { TablaParticipantes } from "@/components/TablaParticipantes";
 import { CronologiaNotas } from "@/components/CronologiaNotas";
 import { StandContactos } from "@/components/StandContactos";
@@ -39,6 +42,12 @@ export default async function ReportePage({ params }: Props) {
         <HeadlineBanner />
         <KPIs data={data} />
         <HotLeads leads={leads} participantes={data.participantes} />
+        <CoberturaObjetivos participantes={data.participantes} />
+
+        <div className="grid gap-6 md:grid-cols-2">
+          <MercadosVirgenes />
+          <Multiplicadores />
+        </div>
 
         <div className="pt-2">
           <h2 className="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-400">
