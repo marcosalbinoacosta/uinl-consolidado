@@ -3,6 +3,8 @@ import { getReporteData } from "@/lib/queries";
 import { fechaHora } from "@/lib/format";
 import { KPIs } from "@/components/KPIs";
 import { TablaParticipantes } from "@/components/TablaParticipantes";
+import { CronologiaNotas } from "@/components/CronologiaNotas";
+import { StandContactos } from "@/components/StandContactos";
 import { HeaderActions } from "@/components/HeaderActions";
 
 export const dynamic = "force-dynamic";
@@ -31,12 +33,14 @@ export default async function ReportePage({ params }: Props) {
 
       <KPIs data={data} />
 
-      <div className="mt-6">
+      <div className="mt-6 space-y-6">
         <TablaParticipantes participantes={data.participantes} />
+        <CronologiaNotas participantes={data.participantes} />
+        <StandContactos stands={data.stand_contactos} representantes={data.representantes} />
       </div>
 
       <footer className="mt-10 text-center text-xs text-slate-400">
-        Próximos: cronología de notas · stand F.0024-02 · vistas por organismo/país/representante · export Excel
+        Próximos: vistas por organismo/país/representante · export Excel · polish PDF
       </footer>
     </main>
   );
