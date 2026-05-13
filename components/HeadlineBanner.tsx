@@ -17,7 +17,7 @@ export function HeadlineBanner() {
 
       <div className="relative mx-auto max-w-5xl">
         <p className="font-mono text-[10px] font-semibold uppercase tracking-kicker text-amber-300/90 print:text-slate-500">
-          01 / Síntesis · análisis con IA · Claude Haiku 4.5
+          01 / Síntesis · análisis con IA
         </p>
         <p className="mt-5 font-serif text-2xl italic leading-snug text-slate-50 md:text-4xl md:leading-tight print:text-slate-900">
           {h}
