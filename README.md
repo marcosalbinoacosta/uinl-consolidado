@@ -5,10 +5,22 @@ Reporte read-only del congreso UINL Bolivia 2026. Lee de la misma Supabase que l
 ## Local
 
 ```bash
-cp .env.example .env.local   # completar URL + ANON KEY de Supabase
+cp .env.example .env.local   # completar URL + ANON KEY de Supabase + ANTHROPIC_API_KEY
 npm install
 npm run dev                  # http://localhost:3000
 ```
+
+## Extracción de insights con IA
+
+`scripts/extract-insights.ts` analiza las notas del equipo con Claude Haiku 4.5
+y produce `data/insights.json` consumido por el dashboard.
+
+```bash
+npm run extract
+```
+
+Se corre **on-demand** (no hay cron). Cada corrida cuesta ~USD 0.01.
+Requiere `ANTHROPIC_API_KEY` en `.env.local`.
 
 ## Deploy
 
