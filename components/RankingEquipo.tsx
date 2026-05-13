@@ -14,31 +14,24 @@ function compute(data: ReporteData): RepStats[] {
   for (const rep of data.representantes) {
     map.set(rep.id, { rep, notas: 0, stand: 0, hotLeads: 0 });
   }
-
-  // Notas por representante
   for (const p of data.participantes) {
     for (const n of p.notas) {
       const s = map.get(n.representante_id);
       if (s) s.notas++;
     }
   }
-
-  // Stand contactos recepcionados
   for (const sc of data.stand_contactos) {
     if (sc.recepcionado_por) {
       const s = map.get(sc.recepcionado_por);
       if (s) s.stand++;
     }
   }
-
-  // Hot leads generados: quien escribió al menos una nota sobre un participante que es hot_lead
-  const leads = hotLeads();
-  const leadIds = new Set(leads.map(l => l.participante_id));
+  const leadIds = new Set(hotLeads().map(l => l.participante_id));
   for (const p of data.participantes) {
     if (!leadIds.has(p.id)) continue;
-    const repsInvolved = new Set<string>();
-    for (const n of p.notas) repsInvolved.add(n.representante_id);
-    for (const rid of repsInvolved) {
+    const reps = new Set<string>();
+    for (const n of p.notas) reps.add(n.representante_id);
+    for (const rid of reps) {
       const s = map.get(rid);
       if (s) s.hotLeads++;
     }
@@ -54,52 +47,48 @@ export function RankingEquipo({ data }: { data: ReporteData }) {
   const maxNotas = Math.max(1, ...stats.map(s => s.notas));
 
   return (
-    <section className="overflow-hidden rounded-xl border border-slate-200 bg-white">
-      <header className="border-b border-slate-200 p-4">
-        <h2 className="text-lg font-bold text-slate-900">👥 Ranking del equipo</h2>
-        <p className="mt-1 text-xs text-slate-500">
-          Actividad de cada representante durante el congreso. Ranking por carga total (notas + stand + hot leads ponderados).
-        </p>
-      </header>
+    <section>
+      <div className="mb-5 flex items-baseline justify-between border-b border-slate-300 pb-3">
+        <p className="kicker">08 / Ranking del equipo</p>
+        <p className="font-serif text-xs italic text-slate-500">actividad durante el congreso</p>
+      </div>
 
-      <div className="divide-y divide-slate-100">
-        {stats.map(s => {
+      <div className="divide-y divide-slate-200">
+        {stats.map((s, idx) => {
           const pctNotas = (s.notas / maxNotas) * 100;
           return (
-            <div key={s.rep.id} className="px-4 py-3">
-              <div className="flex items-center justify-between gap-4">
-                <div className="flex items-center gap-3 min-w-0 flex-1">
-                  <div
-                    className="h-8 w-1 shrink-0 rounded-full"
+            <div key={s.rep.id} className="grid grid-cols-[auto_1fr_auto] items-center gap-6 py-5">
+              <span className="font-mono text-xs font-light text-slate-400">
+                {String(idx + 1).padStart(2, "0")}
+              </span>
+              <div className="min-w-0">
+                <div className="flex items-baseline gap-3">
+                  <span
+                    className="h-3 w-3 shrink-0 rounded-full"
                     style={{ background: s.rep.color }}
                   />
-                  <div className="font-semibold text-slate-900 truncate">{s.rep.nombre}</div>
+                  <h4 className="font-serif text-xl text-slate-900 truncate">{s.rep.nombre}</h4>
                 </div>
-                <div className="flex shrink-0 items-center gap-4 text-xs">
-                  <div className="text-center">
-                    <div className="font-num text-base font-bold text-slate-900">{s.notas}</div>
-                    <div className="text-[10px] uppercase tracking-widest text-slate-500">notas</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="font-num text-base font-bold text-slate-900">{s.stand}</div>
-                    <div className="text-[10px] uppercase tracking-widest text-slate-500">stand</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="font-num text-base font-bold text-amber-700">{s.hotLeads}</div>
-                    <div className="text-[10px] uppercase tracking-widest text-amber-700">hot leads</div>
-                  </div>
+                <div className="ml-6 mt-2 h-[2px] w-full rounded-full bg-slate-100">
+                  <div
+                    className="h-full rounded-full"
+                    style={{ width: `${pctNotas}%`, background: s.rep.color, opacity: 0.7 }}
+                  />
                 </div>
               </div>
-              {/* Bar visual de notas */}
-              <div className="mt-2 h-1.5 w-full rounded-full bg-slate-100">
-                <div
-                  className="h-full rounded-full transition-all"
-                  style={{
-                    width: `${pctNotas}%`,
-                    background: s.rep.color,
-                    opacity: 0.7,
-                  }}
-                />
+              <div className="flex shrink-0 items-baseline gap-7">
+                <div className="text-right">
+                  <p className="font-mono text-2xl font-light leading-none text-slate-900">{s.notas}</p>
+                  <p className="font-mono text-[9px] uppercase tracking-kicker text-slate-500">notas</p>
+                </div>
+                <div className="text-right">
+                  <p className="font-mono text-2xl font-light leading-none text-slate-900">{s.stand}</p>
+                  <p className="font-mono text-[9px] uppercase tracking-kicker text-slate-500">stand</p>
+                </div>
+                <div className="text-right">
+                  <p className="font-mono text-2xl font-light leading-none text-amber-700">{s.hotLeads}</p>
+                  <p className="font-mono text-[9px] uppercase tracking-kicker text-amber-700">hot leads</p>
+                </div>
               </div>
             </div>
           );

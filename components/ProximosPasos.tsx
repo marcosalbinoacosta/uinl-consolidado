@@ -4,42 +4,42 @@ export function ProximosPasos() {
   const items = proximosPasos();
 
   return (
-    <section className="overflow-hidden rounded-xl border border-blue-200 bg-blue-50/30">
-      <header className="border-b border-blue-200/60 bg-blue-50/50 p-4">
-        <h2 className="text-lg font-bold text-slate-900">↦ Próximos pasos pendientes</h2>
-        <p className="mt-1 text-xs text-slate-600">
-          {items.length} acción{items.length === 1 ? "" : "es"} concreta{items.length === 1 ? "" : "s"} identificada{items.length === 1 ? "" : "s"} en las notas. <strong>To-do post viaje</strong> para no perder pista.
-        </p>
-      </header>
-
-      <div className="p-4">
-        {items.length === 0 ? (
-          <p className="py-6 text-center text-sm text-slate-500">
-            Ningún próximo paso registrado todavía.
-          </p>
-        ) : (
-          <ul className="space-y-2">
-            {items.map(p => (
-              <li
-                key={p.participante_id}
-                className="flex items-start gap-3 rounded-lg border border-blue-200 bg-white p-3 shadow-sm"
-              >
-                <span className="mt-0.5 inline-block h-4 w-4 shrink-0 rounded border border-blue-300" />
-                <div className="min-w-0 flex-1">
-                  <p className="text-sm text-slate-800">{p.next_step}</p>
-                  <p className="mt-1 text-[11px] text-slate-500">
-                    <span className="font-semibold text-slate-700">{p.participante_nombre}</span>
-                    {p.pais_label && <span> · {p.pais_label}</span>}
-                  </p>
-                </div>
-                <span className="shrink-0 rounded-full bg-blue-500 px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest text-white">
-                  P{p.priority}
-                </span>
-              </li>
-            ))}
-          </ul>
-        )}
+    <section>
+      <div className="mb-5 flex items-baseline justify-between border-b border-blue-400/50 pb-3">
+        <p className="kicker text-blue-700">07 / Próximos pasos pendientes</p>
+        <p className="font-serif text-xs italic text-slate-500">to-do post viaje</p>
       </div>
+
+      {items.length === 0 ? (
+        <p className="py-8 font-serif italic text-slate-500">Ningún próximo paso registrado todavía.</p>
+      ) : (
+        <p className="mb-5 font-serif text-[15px] italic leading-relaxed text-slate-700">
+          {items.length} acciones concretas identificadas en las notas. No perder pista de ninguna.
+        </p>
+      )}
+
+      <ol className="space-y-3">
+        {items.map((p, idx) => (
+          <li
+            key={p.participante_id}
+            className="grid grid-cols-[auto_1fr_auto] items-baseline gap-4 border-b border-slate-200 pb-3"
+          >
+            <span className="font-mono text-xs font-light text-slate-400">
+              {String(idx + 1).padStart(2, "0")}
+            </span>
+            <div>
+              <p className="font-serif text-[15px] leading-snug text-slate-900">{p.next_step}</p>
+              <p className="mt-0.5 text-xs text-slate-500">
+                <span className="text-slate-700">{p.participante_nombre}</span>
+                {p.pais_label && <span> · {p.pais_label}</span>}
+              </p>
+            </div>
+            <span className="font-mono text-[10px] font-semibold uppercase tracking-kicker text-blue-700">
+              P{p.priority}
+            </span>
+          </li>
+        ))}
+      </ol>
     </section>
   );
 }

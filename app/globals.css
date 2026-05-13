@@ -2,48 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Paleta cream + ink, con un grain SVG sutil para feel de papel */
 html, body {
-  background: #f7f6f1;
-  color: #0b1b3b;
+  background-color: #F7F4EC;
+  color: #0B1B3B;
 }
 
-/* Print stylesheet — se aplica cuando el usuario imprime o guarda como PDF */
+body {
+  /* Grain pattern muy sutil — da textura de papel sin ruido visible */
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 240px 240px;
+}
+
+/* Mejor render de la serif variable Fraunces */
+.font-serif {
+  font-variation-settings: "opsz" 28, "SOFT" 50;
+  font-feature-settings: "ss01", "ss02";
+}
+
+/* Tabular nums por defecto en mono — alinea cifras */
+.font-mono {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Kicker label utility — el patrón se repite mucho */
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: #64748b; /* slate-500 */
+}
+
+/* Reveal animation stagger — la página entra como un periódico bien plegado */
+.reveal-1 { animation: reveal 0.5s ease-out 0.00s backwards; }
+.reveal-2 { animation: reveal 0.5s ease-out 0.06s backwards; }
+.reveal-3 { animation: reveal 0.5s ease-out 0.12s backwards; }
+.reveal-4 { animation: reveal 0.5s ease-out 0.18s backwards; }
+.reveal-5 { animation: reveal 0.5s ease-out 0.24s backwards; }
+.reveal-6 { animation: reveal 0.5s ease-out 0.30s backwards; }
+.reveal-7 { animation: reveal 0.5s ease-out 0.36s backwards; }
+.reveal-8 { animation: reveal 0.5s ease-out 0.42s backwards; }
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Print stylesheet — informe ejecutivo limpio */
 @media print {
   @page {
     size: A4;
     margin: 14mm 12mm;
   }
-
-  body {
+  html, body {
     background: white !important;
-    color: #0b1b3b !important;
+    color: #0B1B3B !important;
     font-size: 10.5pt;
+    background-image: none !important;
   }
-
   .no-print { display: none !important; }
-
-  /* Links sin subrayado / color */
   a { color: inherit !important; text-decoration: none !important; }
-
-  /* Sombras y gradientes no se imprimen bien */
-  .shadow, .shadow-sm, .shadow-md, .shadow-lg {
-    box-shadow: none !important;
-  }
-
-  /* Headings no se cortan a media página */
+  .shadow, .shadow-sm, .shadow-md, .shadow-lg { box-shadow: none !important; }
   h1, h2, h3 { page-break-after: avoid; }
-
-  /* Cards más compactas */
-  .rounded-xl, .rounded-2xl {
-    border-radius: 4px !important;
-  }
-
-  /* Tablas que repiten su header en cada página */
+  .rounded-xl, .rounded-2xl { border-radius: 4px !important; }
   thead { display: table-header-group; }
   tr, td, th { page-break-inside: avoid; }
-
-  /* Section breaks suaves */
-  section {
-    break-inside: avoid-page;
-  }
+  section { break-inside: avoid-page; }
+  [class*="reveal-"] { animation: none !important; opacity: 1 !important; transform: none !important; }
 }
