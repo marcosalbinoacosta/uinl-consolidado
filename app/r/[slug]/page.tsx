@@ -8,6 +8,8 @@ import { HotLeads } from "@/components/HotLeads";
 import { CoberturaObjetivos } from "@/components/CoberturaObjetivos";
 import { MercadosVirgenes } from "@/components/MercadosVirgenes";
 import { Multiplicadores } from "@/components/Multiplicadores";
+import { ProximosPasos } from "@/components/ProximosPasos";
+import { RankingEquipo } from "@/components/RankingEquipo";
 import { TablaParticipantes } from "@/components/TablaParticipantes";
 import { CronologiaNotas } from "@/components/CronologiaNotas";
 import { StandContactos } from "@/components/StandContactos";
@@ -48,6 +50,9 @@ export default async function ReportePage({ params }: Props) {
           <MercadosVirgenes />
           <Multiplicadores />
         </div>
+
+        <ProximosPasos />
+        <RankingEquipo data={data} />
 
         <div className="pt-2">
           <h2 className="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-400">
