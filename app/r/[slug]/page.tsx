@@ -29,7 +29,7 @@ export default async function ReportePage({ params }: Props) {
           <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">UINL · Bolivia 2026</p>
           <h1 className="mt-1 text-3xl font-bold text-slate-900">Consolidado del congreso</h1>
           <p className="mt-1 text-xs text-slate-500">
-            Última actualización de datos: {fechaHora(data.generado_en)} · live desde Supabase
+            Última actualización: {fechaHora(data.generado_en)}
           </p>
         </div>
         <HeaderActions />
@@ -53,7 +53,7 @@ export default async function ReportePage({ params }: Props) {
       </div>
 
       <footer className="mt-10 text-center text-xs text-slate-400">
-        Próximos: cobertura 28 objetivos · multiplicadores · ranking equipo · export Excel · polish PDF
+        +LATINA · Congreso UINL Bolivia 2026
       </footer>
     </main>
   );

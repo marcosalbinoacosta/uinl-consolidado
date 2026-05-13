@@ -15,12 +15,28 @@ npm run dev                  # http://localhost:3000
 `scripts/extract-insights.ts` analiza las notas del equipo con Claude Haiku 4.5
 y produce `data/insights.json` consumido por el dashboard.
 
+### Automático (producción)
+
+GitHub Actions corre el script **todos los días a las 17:00 hora Bolivia**
+(`.github/workflows/refresh-insights.yml`). Commitea el JSON actualizado y
+Vercel auto-deploya.
+
+Para que funcione, agregar 3 **GitHub Repository Secrets** en
+`Settings → Secrets and variables → Actions → New repository secret`:
+
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `ANTHROPIC_API_KEY`
+
+También se puede disparar manualmente desde la pestaña **Actions** del repo.
+
+### Manual (local)
+
 ```bash
 npm run extract
 ```
 
-Se corre **on-demand** (no hay cron). Cada corrida cuesta ~USD 0.01.
-Requiere `ANTHROPIC_API_KEY` en `.env.local`.
+Costo ~USD 0.02 por corrida. Requiere las mismas 3 variables en `.env.local`.
 
 ## Deploy
 
