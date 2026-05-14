@@ -1,5 +1,5 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import type { ParticipanteEnriquecido } from "@/lib/types";
 import { EstadoBadge, AltaPrioridadBadge } from "./EstadoBadge";
 import { fechaHora } from "@/lib/format";
@@ -15,7 +15,13 @@ function norm(s: string | null | undefined): string {
   return (s ?? "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
 }
 
-export function TablaParticipantes({ participantes }: { participantes: ParticipanteEnriquecido[] }) {
+interface TablaProps {
+  participantes: ParticipanteEnriquecido[];
+  defaultShowAll?: boolean;
+  focusedId?: string | null;
+}
+
+export function TablaParticipantes({ participantes, defaultShowAll = false, focusedId }: TablaProps) {
   const [search, setSearch] = useState("");
   const [estado, setEstado] = useState("todos");
   const [soloConNotas, setSoloConNotas] = useState(false);
@@ -23,8 +29,21 @@ export function TablaParticipantes({ participantes }: { participantes: Participa
   const [verTodos, setVerTodos] = useState(false);
   const [expandido, setExpandido] = useState<string | null>(null);
 
-  // Hay interaccion si: hay texto buscado, filtro de estado != todos, algun checkbox, o usuario clickeo "ver todos"
+  // Cuando el sidebar manda un focusedId: expandir y hacer scroll
+  useEffect(() => {
+    if (!focusedId) return;
+    setVerTodos(true);
+    setExpandido(focusedId);
+    setTimeout(() => {
+      document.getElementById(`row-${focusedId}`)?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }, 80);
+  }, [focusedId]);
+
   const hasInteraction =
+    defaultShowAll ||
     search.trim().length > 0 ||
     estado !== "todos" ||
     soloConNotas ||
@@ -150,6 +169,7 @@ export function TablaParticipantes({ participantes }: { participantes: Participa
                   return [
                     <tr
                       key={p.id}
+                      id={`row-${p.id}`}
                       onClick={() => setExpandido(abierto ? null : p.id)}
                       className={`cursor-pointer border-t border-slate-100 transition-colors hover:bg-slate-50 ${abierto ? "bg-slate-50" : ""}`}
                     >

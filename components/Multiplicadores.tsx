@@ -13,8 +13,8 @@ export function Multiplicadores() {
       {items.length === 0 ? (
         <p className="py-8 font-serif italic text-slate-500">Ningún multiplicador identificado todavía.</p>
       ) : (
-        <p className="mb-4 font-serif text-[15px] italic leading-relaxed text-slate-700">
-          Cuidar a estos contactos vale tanto como cuidar a un cliente — son los que abren puerta a otros decisores.
+        <p className="mb-4 font-mono text-[11px] leading-relaxed text-slate-500">
+          Contacto que, además de su propio valor comercial, tiene acceso directo a otro decisor relevante y confirmó que puede hacer la presentación o pasar el contacto.
         </p>
       )}
 
