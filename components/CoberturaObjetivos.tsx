@@ -2,13 +2,10 @@ import type { ParticipanteEnriquecido } from "@/lib/types";
 import { paisesObjetivo, CONTINENTE_ORDEN, type PaisObjetivo } from "@/lib/paises-objetivo";
 import { insightForParticipante } from "@/lib/insights";
 
-type Status = "green" | "yellow" | "red";
+type Status = "reached" | "untouched";
 
 interface Item extends PaisObjetivo {
   status: Status;
-  hotLeadName: string | null;
-  inscriptosCount: number;
-  notasCount: number;
 }
 
 function computeItems(participantes: ParticipanteEnriquecido[]): Item[] {
@@ -22,29 +19,19 @@ function computeItems(participantes: ParticipanteEnriquecido[]): Item[] {
 
   return paisesObjetivo.map(o => {
     const parts = partByPais.get(o.slug) ?? [];
-    let hasHot = false, hasAny = false, hotLeadName: string | null = null, notasCount = 0;
-
-    for (const p of parts) {
-      if (p.notas.length > 0) { hasAny = true; notasCount += p.notas.length; }
-      if (p.contacto.alta_prioridad || p.contacto.estado === "contactado") hasAny = true;
-      const ins = insightForParticipante(p.id);
-      if (ins) {
-        hasAny = true;
-        if (ins.classification === "hot_lead" && !hotLeadName) {
-          hasHot = true;
-          hotLeadName = ins.participante_nombre;
-        }
-      }
-    }
-    const status: Status = hasHot ? "green" : hasAny ? "yellow" : "red";
-    return { ...o, status, hotLeadName, inscriptosCount: parts.length, notasCount };
+    const reached = parts.some(p =>
+      p.notas.length > 0 ||
+      p.contacto.estado === "contactado" ||
+      p.contacto.alta_prioridad ||
+      insightForParticipante(p.id) !== undefined
+    );
+    return { ...o, status: reached ? "reached" : "untouched" };
   });
 }
 
 const DOT: Record<Status, string> = {
-  green:  "bg-emerald-500",
-  yellow: "bg-amber-400",
-  red:    "bg-slate-300",
+  reached:   "bg-emerald-500",
+  untouched: "bg-slate-300",
 };
 
 const CONTINENTE_LABEL: Record<PaisObjetivo["continente"], string> = {
@@ -57,9 +44,8 @@ const CONTINENTE_LABEL: Record<PaisObjetivo["continente"], string> = {
 export function CoberturaObjetivos({ participantes }: { participantes: ParticipanteEnriquecido[] }) {
   const items = computeItems(participantes);
   const totals = {
-    green:  items.filter(i => i.status === "green").length,
-    yellow: items.filter(i => i.status === "yellow").length,
-    red:    items.filter(i => i.status === "red").length,
+    reached:   items.filter(i => i.status === "reached").length,
+    untouched: items.filter(i => i.status === "untouched").length,
   };
   const byContinente = new Map<PaisObjetivo["continente"], Item[]>();
   for (const item of items) {
@@ -73,9 +59,8 @@ export function CoberturaObjetivos({ participantes }: { participantes: Participa
       <div className="mb-6 flex flex-wrap items-baseline justify-between gap-y-2 border-b border-slate-300 pb-3">
         <p className="kicker">04 / Cobertura · 28 países objetivo</p>
         <p className="font-mono text-[11px] text-slate-600">
-          <span className="text-emerald-700">●</span> {totals.green} con hot lead{"  "}
-          <span className="text-amber-600">●</span> {totals.yellow} con actividad{"  "}
-          <span className="text-slate-400">●</span> {totals.red} sin tocar
+          <span className="text-emerald-700">●</span> {totals.reached} alcanzados{"  "}
+          <span className="text-slate-400">●</span> {totals.untouched} sin tocar
         </p>
       </div>
 
@@ -91,19 +76,10 @@ export function CoberturaObjetivos({ participantes }: { participantes: Participa
               </h3>
               <ul className="divide-y divide-slate-200 border-y border-slate-200">
                 {grupo.map(item => (
-                  <li key={item.slug} className="flex items-baseline gap-3 py-2.5">
+                  <li key={item.slug} className="flex items-center gap-3 py-2.5">
                     <span className={`h-2 w-2 shrink-0 rounded-full ${DOT[item.status]}`} />
-                    <span className="font-serif text-[15px] text-slate-900">{item.nombre}</span>
-                    <span className="ml-auto flex items-baseline gap-2 text-right text-xs">
-                      {item.hotLeadName ? (
-                        <span className="font-sans text-emerald-700">{item.hotLeadName}</span>
-                      ) : item.status === "yellow" ? (
-                        <span className="font-mono text-amber-700">
-                          {item.notasCount > 0 ? `${item.notasCount} nota${item.notasCount === 1 ? "" : "s"}` : "actividad"}
-                        </span>
-                      ) : (
-                        <span className="font-mono italic text-slate-400">sin contacto</span>
-                      )}
+                    <span className={`font-serif text-[15px] ${item.status === "reached" ? "text-slate-900" : "text-slate-400"}`}>
+                      {item.nombre}
                     </span>
                   </li>
                 ))}

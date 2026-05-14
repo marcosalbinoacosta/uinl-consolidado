@@ -64,11 +64,6 @@ export function DashboardView({ data, leads }: Props) {
       .filter(Boolean)
   ).size, [data.participantes]);
 
-  // ── Pipeline ──────────────────────────────────────────────────────────
-  const hotLeadsCount  = insights.global.hot_leads_count;
-  const warmCount      = useMemo(() => insights.insights.filter(i => i.classification === "warm").length, []);
-  const datoComercial  = useMemo(() => insights.insights.filter(i => i.pipeline_usd_clue !== null).length, []);
-
   // ── Acciones ──────────────────────────────────────────────────────────
   const proximosPasosCount  = insights.global.next_steps_count;
   const multiplicadoresCount = insights.global.multipliers_count;
@@ -79,15 +74,6 @@ export function DashboardView({ data, leads }: Props) {
     () => data.participantes.filter(p => p.contacto.estado === "contactado"),
     [data.participantes],
   );
-  const warmList = useMemo(
-    () => data.participantes.filter(p => insightForParticipante(p.id)?.classification === "warm"),
-    [data.participantes],
-  );
-  const comercialList = useMemo(
-    () => data.participantes.filter(p => insightForParticipante(p.id)?.pipeline_usd_clue != null),
-    [data.participantes],
-  );
-
   function navigate(v: View) {
     setView(v);
     setFocusedId(null);
@@ -127,18 +113,6 @@ export function DashboardView({ data, leads }: Props) {
             <NavStat value={contactadosDirect} label="contactados directos" sub={pct(contactadosDirect, total)} active={isActive("contactados")}   onClick={() => navigate("contactados")} color="text-blue-700" />
             <NavStat value={data.total_notas}  label="notas registradas"    active={isActive("notas")}          onClick={() => navigate("notas")} />
             <NavStat value={standTotal}         label="contactos de stand"   active={isActive("stand")}          onClick={() => navigate("stand")} />
-          </div>
-        </div>
-
-        {/* Sección: Pipeline comercial */}
-        <div className="border-b border-slate-200 px-3 py-4">
-          <p className="mb-2.5 px-1 font-mono text-[9px] font-semibold uppercase tracking-kicker text-slate-400">
-            Pipeline comercial
-          </p>
-          <div className="space-y-0.5">
-            <NavStat value={hotLeadsCount}  label="hot leads"          active={isActive("hot_leads")} onClick={() => navigate("hot_leads")} color="text-amber-700" />
-            <NavStat value={warmCount}       label="interés confirmado" active={isActive("warm")}      onClick={() => navigate("warm")}      color="text-orange-600" />
-            <NavStat value={datoComercial}   label="con dato comercial" active={isActive("comercial")} onClick={() => navigate("comercial")} color="text-emerald-700" />
           </div>
         </div>
 
@@ -246,18 +220,6 @@ export function DashboardView({ data, leads }: Props) {
           {view === "hot_leads" && (
             <div className="p-6">
               <HotLeads leads={leads} participantes={data.participantes} />
-            </div>
-          )}
-
-          {view === "warm" && (
-            <div className="p-5">
-              <TablaParticipantes participantes={warmList} defaultShowAll />
-            </div>
-          )}
-
-          {view === "comercial" && (
-            <div className="p-5">
-              <TablaParticipantes participantes={comercialList} defaultShowAll />
             </div>
           )}
 
