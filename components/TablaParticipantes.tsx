@@ -1,6 +1,7 @@
 "use client";
 import { useMemo, useState, useEffect } from "react";
 import type { ParticipanteEnriquecido } from "@/lib/types";
+import { insightForParticipante } from "@/lib/insights";
 import { EstadoBadge, AltaPrioridadBadge } from "./EstadoBadge";
 import { fechaHora } from "@/lib/format";
 
@@ -53,6 +54,9 @@ export function TablaParticipantes({ participantes, defaultShowAll = false, focu
   const filtered = useMemo(() => {
     if (!hasInteraction) return [];
     const q = norm(search.trim());
+    const effectivePriority = (p: ParticipanteEnriquecido) =>
+      insightForParticipante(p.id)?.priority ?? p.prioridad_score;
+
     return participantes.filter(p => {
       if (estado !== "todos" && p.contacto.estado !== estado) return false;
       if (soloConNotas && p.notas.length === 0) return false;
@@ -66,7 +70,10 @@ export function TablaParticipantes({ participantes, defaultShowAll = false, focu
       if (a.contacto.alta_prioridad !== b.contacto.alta_prioridad) {
         return a.contacto.alta_prioridad ? -1 : 1;
       }
-      return b.prioridad_score - a.prioridad_score || a.nombre_completo.localeCompare(b.nombre_completo);
+      const aHasInsight = insightForParticipante(a.id) !== undefined;
+      const bHasInsight = insightForParticipante(b.id) !== undefined;
+      if (aHasInsight !== bHasInsight) return aHasInsight ? -1 : 1;
+      return effectivePriority(b) - effectivePriority(a) || a.nombre_completo.localeCompare(b.nombre_completo);
     });
   }, [participantes, search, estado, soloConNotas, soloAlta, hasInteraction]);
 
@@ -184,7 +191,18 @@ export function TablaParticipantes({ participantes, defaultShowAll = false, focu
                         {p.contacto.alta_prioridad && <AltaPrioridadBadge />}
                       </td>
                       <td className="px-4 py-2.5 text-right font-num text-slate-700">{p.notas.length}</td>
-                      <td className="px-4 py-2.5 text-right font-num font-semibold text-slate-900">{p.prioridad_score}</td>
+                      <td className="px-4 py-2.5 text-right font-num font-semibold text-slate-900">
+                        {(() => {
+                          const ins = insightForParticipante(p.id);
+                          if (!ins) return <span className="text-slate-300">—</span>;
+                          return (
+                            <span title={`Score IA (${ins.classification})`}>
+                              {ins.priority}
+                              <span className="ml-0.5 text-[9px] font-normal text-amber-500">AI</span>
+                            </span>
+                          );
+                        })()}
+                      </td>
                     </tr>,
                     abierto ? (
                       <tr key={`${p.id}-exp`}>
