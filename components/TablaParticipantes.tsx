@@ -54,8 +54,11 @@ export function TablaParticipantes({ participantes, defaultShowAll = false, focu
   const filtered = useMemo(() => {
     if (!hasInteraction) return [];
     const q = norm(search.trim());
-    const effectivePriority = (p: ParticipanteEnriquecido) =>
-      insightForParticipante(p.id)?.priority ?? p.prioridad_score;
+    const tier = (p: ParticipanteEnriquecido) => {
+      if (insightForParticipante(p.id)) return 0;
+      if (p.contacto.estado === "contactado") return 1;
+      return 2;
+    };
 
     return participantes.filter(p => {
       if (estado !== "todos" && p.contacto.estado !== estado) return false;
@@ -67,13 +70,12 @@ export function TablaParticipantes({ participantes, defaultShowAll = false, focu
       }
       return true;
     }).sort((a, b) => {
-      if (a.contacto.alta_prioridad !== b.contacto.alta_prioridad) {
-        return a.contacto.alta_prioridad ? -1 : 1;
+      const ta = tier(a), tb = tier(b);
+      if (ta !== tb) return ta - tb;
+      if (ta === 0) {
+        return insightForParticipante(b.id)!.priority - insightForParticipante(a.id)!.priority;
       }
-      const aHasInsight = insightForParticipante(a.id) !== undefined;
-      const bHasInsight = insightForParticipante(b.id) !== undefined;
-      if (aHasInsight !== bHasInsight) return aHasInsight ? -1 : 1;
-      return effectivePriority(b) - effectivePriority(a) || a.nombre_completo.localeCompare(b.nombre_completo);
+      return a.nombre_completo.localeCompare(b.nombre_completo);
     });
   }, [participantes, search, estado, soloConNotas, soloAlta, hasInteraction]);
 
