@@ -240,10 +240,10 @@ function buildProximosPasos(wb: ExcelJS.Workbook) {
 // ============================================================================
 function buildCobertura(wb: ExcelJS.Workbook, data: ReporteData) {
   const ws = wb.addWorksheet("Cobertura Objetivos", { properties: { tabColor: { argb: C.greenDk } } });
-  const widths = [14, 28, 22, 12, 10, 32];
+  const widths = [14, 28, 20, 12, 10];
   setWidths(ws, widths);
   addTitle(ws, "🎯 Cobertura — los 28 países objetivo de campaña", widths.length, C.dark);
-  const headers = ["Continente", "País", "Estado", "Inscriptos", "Notas", "Hot lead identificado"];
+  const headers = ["Continente", "País", "Estado", "Inscriptos", "Notas"];
   addHeaders(ws, headers, 3);
 
   const partByPais = new Map<string, typeof data.participantes>();
@@ -259,25 +259,16 @@ function buildCobertura(wb: ExcelJS.Workbook, data: ReporteData) {
   for (const cont of CONTINENTE_ORDEN) {
     for (const o of paisesObjetivo.filter(p => p.continente === cont)) {
       const parts = partByPais.get(o.slug) ?? [];
-      let hasHot = false, hasAny = false, hotName = "", notasTotal = 0;
-      for (const p of parts) {
+      let notasTotal = 0;
+      const reached = parts.some(p => {
         notasTotal += p.notas.length;
-        if (p.notas.length > 0 || p.contacto.alta_prioridad || p.contacto.estado === "contactado") hasAny = true;
-        const ins = insightsByPart.get(p.id);
-        if (ins) {
-          hasAny = true;
-          if (ins.classification === "hot_lead" && !hotName) {
-            hasHot = true;
-            hotName = ins.participante_nombre;
-          }
-        }
-      }
-      const status: "green" | "yellow" | "red" = hasHot ? "green" : hasAny ? "yellow" : "red";
-      const statusLabel = status === "green" ? "🟢 Hot lead" : status === "yellow" ? "🟡 Con actividad" : "🔴 Sin tocar";
-      const statusBg = status === "green" ? C.green : status === "yellow" ? C.yellow : C.red;
-      const statusFg = status === "green" ? C.greenDk : status === "yellow" ? C.yellowDk : C.redDk;
+        return p.notas.length > 0 || p.contacto.estado === "contactado" || p.contacto.alta_prioridad || insightsByPart.get(p.id) !== undefined;
+      });
+      const statusLabel = reached ? "✅ Alcanzado" : "— Sin tocar";
+      const statusBg = reached ? C.green : C.header;
+      const statusFg = reached ? C.greenDk : C.text;
 
-      ws.getRow(row).values = [o.continente, o.nombre, statusLabel, parts.length, notasTotal, hotName];
+      ws.getRow(row).values = [o.continente, o.nombre, statusLabel, parts.length, notasTotal];
       // Estilo por fila
       for (let c = 1; c <= widths.length; c++) {
         const cell = ws.getRow(row).getCell(c);
@@ -347,11 +338,20 @@ function buildParticipantes(wb: ExcelJS.Workbook, data: ReporteData) {
   const headers = ["Nombre", "País", "Cargo principal", "Email", "Teléfono", "Organización", "Estado", "Alta prioridad", "Notas", "Prioridad"];
   addHeaders(ws, headers, 3);
 
+  const tier = (p: (typeof data.participantes)[0]) => {
+    if (insightsByPart.get(p.id)) return 0;
+    if (p.contacto.estado === "contactado") return 1;
+    return 2;
+  };
+  const insightsByPart = new Map(insights.insights.map(i => [i.participante_id, i]));
   const ordered = [...data.participantes].sort((a, b) => {
-    if (a.contacto.alta_prioridad !== b.contacto.alta_prioridad) return a.contacto.alta_prioridad ? -1 : 1;
-    return b.prioridad_score - a.prioridad_score || a.nombre_completo.localeCompare(b.nombre_completo);
+    const ta = tier(a), tb = tier(b);
+    if (ta !== tb) return ta - tb;
+    if (ta === 0) return insightsByPart.get(b.id)!.priority - insightsByPart.get(a.id)!.priority;
+    return a.nombre_completo.localeCompare(b.nombre_completo);
   });
   for (const p of ordered) {
+    const ins = insightsByPart.get(p.id);
     ws.addRow([
       p.nombre_completo,
       p.pais_label ?? "",
@@ -362,7 +362,7 @@ function buildParticipantes(wb: ExcelJS.Workbook, data: ReporteData) {
       p.contacto.estado,
       fmtBool(p.contacto.alta_prioridad),
       p.notas.length,
-      p.prioridad_score,
+      ins?.priority ?? "",
     ]);
   }
   styleDataRange(ws, 4, 3 + ordered.length, widths.length, { zebra: true });
