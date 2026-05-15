@@ -2,9 +2,10 @@ name: Refrescar insights
 
 on:
   schedule:
-    # Todos los días a las 21:00 UTC = 17:00 hora Bolivia (UTC-4)
-    # Captura el día completo de actividad del equipo en el congreso.
-    - cron: "0 21 * * *"
+    # 10:00 UTC = 06:00 Bolivia (UTC-4) — captura notas de la noche anterior
+    - cron: "0 10 * * *"
+    # 22:00 UTC = 18:00 Bolivia (UTC-4) — captura el día completo de actividad
+    - cron: "0 22 * * *"
   # Trigger manual desde Actions → "Run workflow"
   workflow_dispatch:
 
