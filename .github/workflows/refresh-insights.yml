@@ -9,9 +9,6 @@ on:
   # Trigger manual desde Actions → "Run workflow"
   workflow_dispatch:
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
   extract:
     runs-on: ubuntu-latest

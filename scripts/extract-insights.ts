@@ -31,6 +31,11 @@ import * as path from "path";
 import ws from "ws";
 import type { InsightItem, InsightsFile } from "../lib/insights-types";
 
+// Node.js < 22 no tiene WebSocket nativo; Supabase realtime-js lo requiere al inicializar
+if (typeof (globalThis as any).WebSocket === "undefined") {
+  (globalThis as any).WebSocket = ws;
+}
+
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 const ANTHROPIC_KEY = process.env.ANTHROPIC_API_KEY;
@@ -47,10 +52,7 @@ if (!ANTHROPIC_KEY) {
 
 const MODEL = "claude-haiku-4-5-20251001";
 
-const sb = createClient(SUPABASE_URL, SUPABASE_KEY, {
-  auth: { persistSession: false },
-  realtime: { transport: ws },
-});
+const sb = createClient(SUPABASE_URL, SUPABASE_KEY, { auth: { persistSession: false } });
 const anthropic = new Anthropic({ apiKey: ANTHROPIC_KEY });
 
 interface ContextoParticipante {
