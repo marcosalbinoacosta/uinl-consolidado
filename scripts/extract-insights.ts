@@ -28,6 +28,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@supabase/supabase-js";
 import * as fs from "fs";
 import * as path from "path";
+import ws from "ws";
 import type { InsightItem, InsightsFile } from "../lib/insights-types";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -46,7 +47,10 @@ if (!ANTHROPIC_KEY) {
 
 const MODEL = "claude-haiku-4-5-20251001";
 
-const sb = createClient(SUPABASE_URL, SUPABASE_KEY, { auth: { persistSession: false } });
+const sb = createClient(SUPABASE_URL, SUPABASE_KEY, {
+  auth: { persistSession: false },
+  realtime: { transport: ws },
+});
 const anthropic = new Anthropic({ apiKey: ANTHROPIC_KEY });
 
 interface ContextoParticipante {
