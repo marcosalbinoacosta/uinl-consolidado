@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-07T22:54:53.534Z",
+  "generated_at": "2026-06-08T13:58:51.541Z",
   "model": "claude-haiku-4-5-20251001",
   "total_notes_analyzed": 110,
   "total_participants_analyzed": 82,
@@ -8,10 +8,10 @@
       "participante_id": "11694302-e1e0-41bc-94fc-69dba1a78f19",
       "participante_nombre": "Maximiliano Molina",
       "pais_label": "Argentina",
-      "classification": "social",
+      "classification": "info_only",
       "lead_reason": null,
       "next_step": null,
-      "multiplier_to": "Maximiliano Molina → Presidente del notariado de Senegal (presentación prometida)",
+      "multiplier_to": "Maximiliano Molina → Presidente del notariado de Senegal",
       "virgin_market": false,
       "pipeline_usd_clue": null,
       "priority": 18
@@ -21,59 +21,59 @@
       "participante_nombre": "Victor Guerra",
       "pais_label": "Peru",
       "classification": "hot_lead",
-      "lead_reason": "Colegio ICA gasta USD 1500/mes, varios colegios se independizan por precios altos.",
-      "next_step": "Cotizar para Colegio Notarial de ICA (150k y 300k unidades); coordinar con Arequipa y Ayacucho.",
-      "multiplier_to": "Victor Guerra → Tesorero Cesar Moscoso y Decano Colegio de Lima (cadena de recomendación)",
+      "lead_reason": "Gasto actual 1500 USD/mes, independización de colegios, cotización solicitada",
+      "next_step": "Cotizar para Colegio Notarial de ICA con cantidades finales",
+      "multiplier_to": "Victor Guerra → Tesorero Not. Cesar Moscoso (acceso a Junta Nacional)",
       "virgin_market": false,
-      "pipeline_usd_clue": "1500 USD mensuales (Colegio de ICA); varias colegios independizados",
+      "pipeline_usd_clue": "1500 USD mensuales Colegio ICA, Arequipa y Ayacucho buscan independizarse",
       "priority": 88
     },
     {
-      "participante_id": "8363bd30-9206-4684-bed0-9b372230ee36",
-      "participante_nombre": "Miguel Fernando Ruiz",
-      "pais_label": "Honduras",
+      "participante_id": "8363bd30-9206-4684-bed0-9b372142ee36",
+      "participante_nombre": "?",
+      "pais_label": null,
       "classification": "warm",
-      "lead_reason": "Sistema de fojas + sellos (marbetes) con necesidad de seguridad en Honduras.",
-      "next_step": "Contactar con colegas mencionados; coordinar reunión de seguimiento.",
+      "lead_reason": "Sistema conocido, impresión privada, sellos sin seguridad",
+      "next_step": null,
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 45
+      "priority": 52
     },
     {
       "participante_id": "f7b1cb96-5d25-4a14-8f51-c881cd7bb2c5",
       "participante_nombre": "Stenka Geovanna UDAETA ESPAÑA",
       "pais_label": "Bolivia",
-      "classification": "hot_lead",
-      "lead_reason": "Presidente CAAm confirmó reunión con DIRNOPLU; alta autoridad en Bolivia.",
-      "next_step": "Coordinar reunión con DIRNOPLU (horarios pendientes confirmación).",
-      "multiplier_to": "Stenka → Director DIRNOPLU (presentación confirmada)",
+      "classification": "warm",
+      "lead_reason": "Confirmó reunión DIRNOPLU, contacto de alto nivel",
+      "next_step": "Coordinar reunión con DIRNOPLU",
+      "multiplier_to": "Stenka Udaeta → Director DIRNOPLU (emisión y distribución fojas)",
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 80
+      "priority": 65
     },
     {
       "participante_id": "269bfa75-2608-4ca0-a1e6-f551ac3188ba",
       "participante_nombre": "Hemerson Dante Manosalva Perez",
       "pais_label": "Perú",
       "classification": "warm",
-      "lead_reason": "Colegio pequeño; mostró interés en seguridad documental; sistema digital en implementación.",
-      "next_step": "Seguimiento comercial; evaluar oportunidad en transición digital.",
+      "lead_reason": "Interés en seguridad documental, colegio pequeño dependiente Lima",
+      "next_step": null,
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 42
+      "priority": 48
     },
     {
       "participante_id": "b87476e0-4513-4937-9cef-99ead65abb65",
       "participante_nombre": "Kaissa CAMARA",
       "pais_label": "Guinea",
       "classification": "hot_lead",
-      "lead_reason": "Guinea NO tiene papel de seguridad; primer presupuesto completamente especificado.",
-      "next_step": "Entregar presupuesto mañana; concretar pedido antes de partir (5000/10000/20000 unidades).",
+      "lead_reason": "Sin papel seguridad, cotización solicitada, presidenta muy interesada",
+      "next_step": "Enviar presupuesto Guinea (fojas + marbetes) en 24hs",
       "multiplier_to": null,
       "virgin_market": true,
-      "pipeline_usd_clue": "Referencia China: 10k unidades a 5000 EUR; solicitud por 5k, 10k, 20k",
+      "pipeline_usd_clue": "Referencia China 5000-20000 unidades a 5000 EUR, presupuesto urgente",
       "priority": 95
     },
     {
@@ -81,8 +81,8 @@
       "participante_nombre": "Claudia María OLANO LASARTE",
       "pais_label": "Uruguay",
       "classification": "warm",
-      "lead_reason": "Volvió a actividad notarial; consejo directivo; desconoce detalles de compra actual.",
-      "next_step": "Coordinar participación en eventos de liderazgo (Córdoba agosto, Mendoza próximo año).",
+      "lead_reason": "Contacto consejo directivo, cambio gobierno, desconocimiento compra",
+      "next_step": null,
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
@@ -94,11 +94,11 @@
       "pais_label": "Bolivia",
       "classification": "info_only",
       "lead_reason": null,
-      "next_step": "Contacto directo con DIRNOPLU; no acción individual.",
+      "next_step": null,
       "multiplier_to": null,
       "virgin_market": false,
-      "pipeline_usd_clue": "Compran en DIRNOPLU; tres niveles de seguridad; QR + código + hash",
-      "priority": 20
+      "pipeline_usd_clue": "Fojas compradas en Dirnoplu, 0.50 USD por hoja Bolivia",
+      "priority": 22
     },
     {
       "participante_id": "c271c5fe-aa3c-452d-842a-0fb788664b72",
@@ -110,19 +110,19 @@
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 5
+      "priority": 8
     },
     {
       "participante_id": "16f49883-b4b3-4069-8702-dc4ea18fbb04",
       "participante_nombre": "Kleidy rengel",
       "pais_label": "Bolivia",
       "classification": "warm",
-      "lead_reason": "Impactada con historia y medidas de seguridad; demostración completa.",
-      "next_step": "Referencia a DIRNOPLU (coordinado en macro strategy Bolivia).",
+      "lead_reason": "Demostración completa, impactada medidas seguridad",
+      "next_step": null,
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 38
+      "priority": 42
     },
     {
       "participante_id": "e29cc6b1-7fd3-4cde-a778-e84c497be608",
@@ -134,7 +134,7 @@
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 5
+      "priority": 6
     },
     {
       "participante_id": "bab6f3f5-e48e-4282-aa0e-f923f1752ccd",
@@ -142,32 +142,32 @@
       "pais_label": "Argentina",
       "classification": "info_only",
       "lead_reason": null,
-      "next_step": "Transcribir reporte WhatsApp de Bárbara.",
+      "next_step": null,
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 12
+      "priority": 10
     },
     {
       "participante_id": "f75337e6-950a-48f6-a74e-f9c10920efad",
       "participante_nombre": "YESID FERNANDO CHALCO SUAREZ",
       "pais_label": "Bolivia",
       "classification": "hot_lead",
-      "lead_reason": "Vicepresidente Asociación Nacional; contactará Director DIRNOPLU; reestructuración gobierno favorece.",
-      "next_step": "Contactar a Director DIRNOPLU a través del Vicepresidente; aprovechar ventana de reestructuración.",
-      "multiplier_to": "Yesid Fernando Chalco → Director DIRNOPLU (presentación confirmada)",
+      "lead_reason": "Vicepresidente nacional, presentará DIRNOPLU, reestructuración favorable",
+      "next_step": "Contacto DIRNOPLU a través de Vicepresidente",
+      "multiplier_to": "Yesid Chalco → Director DIRNOPLU (emisión y distribución)",
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 85
+      "priority": 78
     },
     {
       "participante_id": "19b7473e-e1de-4405-af19-45b74f5c395d",
       "participante_nombre": "Michelle Collazo",
       "pais_label": "Puerto Rico",
       "classification": "hot_lead",
-      "lead_reason": "Puerto Rico NO tiene documentación de seguridad; Michelle abrirá puerta a Presidencia/Tribunal.",
-      "next_step": "Contactar a Notario Denis (Presidencia) → decisor en Tribunal Superior de Justicia.",
-      "multiplier_to": "Michelle Collazo → Presidente Denis → Tribunal Superior de Justicia (cadena decisoria)",
+      "lead_reason": "Sin seguridad documental, encantados, cadena de acceso a tribunal",
+      "next_step": "Coordinar presentación con presidencia (Denis) y Tribunal S. Justicia",
+      "multiplier_to": "Michelle Collazo → Denis (presidente) → Tribunal S. Justicia (decisor)",
       "virgin_market": true,
       "pipeline_usd_clue": null,
       "priority": 82
@@ -178,11 +178,11 @@
       "pais_label": "Colombia",
       "classification": "info_only",
       "lead_reason": null,
-      "next_step": "Evaluar competencia (Cadenas es proveedor actual); requiere licitación estatal.",
+      "next_step": null,
       "multiplier_to": null,
       "virgin_market": false,
-      "pipeline_usd_clue": "ANI compra actual regulada por gobierno; competidor Cadenas",
-      "priority": 25
+      "pipeline_usd_clue": "ANI compra papel, regulado gobierno, actual proveedor Cadenas",
+      "priority": 24
     },
     {
       "participante_id": "d04435e9-8456-44b7-a254-afad6fc6620f",
@@ -194,7 +194,7 @@
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 8
+      "priority": 12
     },
     {
       "participante_id": "77792b93-be8d-479f-a96b-0fe07e165f0f",
@@ -206,16 +206,16 @@
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 10
+      "priority": 14
     },
     {
       "participante_id": "d577259c-4c2d-4b07-8b95-92ec4d426650",
       "participante_nombre": "Jhon Richard PANIAGUA FELIZ",
       "pais_label": "República Dominicana",
       "classification": "hot_lead",
-      "lead_reason": "Presidente + comunicación solicitan presencia en evento; denunciaron falsificaciones detectadas.",
-      "next_step": "Confirmar participación en evento República Dominicana; contactar comunicación Gregorio Cabral.",
-      "multiplier_to": "John Paniagua → Gregorio Cabral Comunicación (coordinación de evento)",
+      "lead_reason": "Falsificaciones, quieren evento +LATINA, presidente interesado",
+      "next_step": "Coordinar evento de +LATINA en República Dominicana",
+      "multiplier_to": "John Paniagua → Gregorio Cabral (comunicación coordinador)",
       "virgin_market": false,
       "pipeline_usd_clue": null,
       "priority": 72
@@ -225,36 +225,36 @@
       "participante_nombre": "JUAN GREGORIO CABRAL FELIZ",
       "pais_label": "República Dominicana",
       "classification": "hot_lead",
-      "lead_reason": "Comunicación oficial; falsificaciones detectadas; evento planificado con presencia solicitada.",
-      "next_step": "Coordinar evento República Dominicana; presentación de soluciones contra falsificaciones.",
+      "lead_reason": "Falsificaciones problema, quieren evento +LATINA",
+      "next_step": "Coordinar evento con equipo República Dominicana",
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 75
+      "priority": 70
     },
     {
       "participante_id": "032f1073-eb01-4a0d-bb9e-df2d70164d31",
       "participante_nombre": "ANTONIO DE JESUS RODRIGUEZ TEJADA",
       "pais_label": "República Dominicana",
       "classification": "hot_lead",
-      "lead_reason": "Vicepresidente; hojas previas fallaron; sistema digital avanzado; presupuesto solicitado.",
-      "next_step": "Entregar presupuesto tras sesión plenaria; coordinar reunión para datos (casi 5000 notarios).",
+      "lead_reason": "Vicepresidente, fojas fallidas actuales, digitalización avanzada, cotización",
+      "next_step": "Enviar presupuesto con datos técnicos y falla documentada",
       "multiplier_to": null,
       "virgin_market": false,
-      "pipeline_usd_clue": "Problema anterior con hojas defectuosas; ~5000 notarios activos",
-      "priority": 90
+      "pipeline_usd_clue": "5000 notarios, casi 5000 notarios activos, presupuesto urgente",
+      "priority": 87
     },
     {
       "participante_id": "2dc447a9-85e9-4e32-896a-6b7a22e60e1a",
       "participante_nombre": "Layindé Fati LIADY",
       "pais_label": "Benin",
       "classification": "warm",
-      "lead_reason": "Benin sin seguridad; prometer estudiar brochure y volver; SMS enviado.",
-      "next_step": "Seguimiento de contacto SMS; esperar retorno con intención.",
+      "lead_reason": "Sin seguridad, interesada en brochure",
+      "next_step": "Seguimiento prometido, contacto pendiente",
       "multiplier_to": null,
       "virgin_market": true,
       "pipeline_usd_clue": null,
-      "priority": 48
+      "priority": 38
     },
     {
       "participante_id": "204e46d4-5ff4-483f-9467-c4266af2bd4b",
@@ -262,23 +262,23 @@
       "pais_label": "Brasil",
       "classification": "info_only",
       "lead_reason": null,
-      "next_step": "Evaluar mercado Brasil; certificación estatal requiere es barrera alta.",
+      "next_step": null,
       "multiplier_to": null,
       "virgin_market": false,
-      "pipeline_usd_clue": null,
-      "priority": 15
+      "pipeline_usd_clue": "Privados certificados estado, mercado muy cerrado",
+      "priority": 16
     },
     {
       "participante_id": "2cfc9d8c-8059-4a50-b826-a60b6ad9bc22",
       "participante_nombre": "Ramón Grullon.",
       "pais_label": "Republica Dominicana",
-      "classification": "warm",
-      "lead_reason": "Diplomático RD ofrece contacto Junta Electoral para certificados nacimiento/defunción/matrimonio.",
-      "next_step": "Contactar funcionarios Junta Central Electoral RD a través de Ramón Grullon.",
-      "multiplier_to": "Ramón Grullon → Junta Central Electoral RD (documentos vitales)",
+      "classification": "info_only",
+      "lead_reason": null,
+      "next_step": null,
+      "multiplier_to": "Ramón Grullon → Junta Central Electoral (emisión certificados vitales)",
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 52
+      "priority": 20
     },
     {
       "participante_id": "dafe8a11-1555-40fb-bd36-a82d117e7a8e",
@@ -290,55 +290,55 @@
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 3
+      "priority": 4
     },
     {
       "participante_id": "afe2d0ad-67fb-4ba6-b72d-fc67ba7e70ea",
       "participante_nombre": "OLGER CENTELLAS MACHACA",
       "pais_label": "Perú",
       "classification": "hot_lead",
-      "lead_reason": "Colegio Cuzco muy interesado; presupuesto solicitado por 500k y 1M unidades.",
-      "next_step": "Entregar presupuesto a Not. Olger Centellas (olgercentellas@hotmail.com); incluir QR.",
+      "lead_reason": "Super interesado, cotización solicitada para Cuzco",
+      "next_step": "Enviar presupuesto Colegio Notarial Cuzco (500k-1M fojas)",
       "multiplier_to": null,
       "virgin_market": false,
-      "pipeline_usd_clue": "Solicitud presupuesto 500k y 1M unidades de fojas",
-      "priority": 78
+      "pipeline_usd_clue": "500.000 y 1.000.000 unidades solicitadas",
+      "priority": 84
     },
     {
       "participante_id": "98538f23-583b-4266-b67c-3d729e9abe0a",
       "participante_nombre": "Miguel ARIAS MADURO",
       "pais_label": "Costa Rica",
-      "classification": "info_only",
-      "lead_reason": null,
-      "next_step": "Evaluar licitación estatal Costa Rica; transición digital acelerada.",
+      "classification": "warm",
+      "lead_reason": "Licitación pública, transición digital, diseño pobre actual",
+      "next_step": null,
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 22
+      "priority": 44
     },
     {
       "participante_id": "e21bb4f8-4aed-430f-bac7-282c6aa36448",
       "participante_nombre": "Rubén Vargas",
       "pais_label": "Peru",
       "classification": "hot_lead",
-      "lead_reason": "Colegio Ucayali muy interesado; presupuesto solicitado (20k y 40k unidades + marbetes).",
-      "next_step": "Entregar presupuesto a Not. Rubén Vargas (vargasruben2009@hotmail.com); incluir holograma.",
+      "lead_reason": "Super interesado, cotización solicitada para Ucayali",
+      "next_step": "Enviar presupuesto Colegio Ucayali (20k-40k fojas + marbetes)",
       "multiplier_to": null,
       "virgin_market": false,
-      "pipeline_usd_clue": "Solicitud presupuesto 20k y 40k unidades; fojas + marbetes",
-      "priority": 77
+      "pipeline_usd_clue": "20.000 y 40.000 unidades solicitadas",
+      "priority": 86
     },
     {
       "participante_id": "d1cecc02-6a3e-47a6-8c55-f37df7c4182d",
       "participante_nombre": "Héctor Sintura. Pte Colombia",
       "pais_label": "Colombia",
       "classification": "hot_lead",
-      "lead_reason": "Presidente notariado Colombia solicitó cotizaciones por 1M fojas; tres niveles seguridad.",
-      "next_step": "Simular presupuestos bajo/medio/alto por 1M fojas; recopilar imagen actual + presupuesto anual.",
-      "multiplier_to": "Héctor Sintura → Alfonso Ávila Fadul (coordinación de datos)",
+      "lead_reason": "Presidente nacional, pidió cotización, simulación 3 niveles seguridad",
+      "next_step": "Enviar presupuestos Colombia (bajo/medio/alto) por 1M unidades",
+      "multiplier_to": "Héctor Sintura → Alfonso Ávila (coordinador comercial)",
       "virgin_market": false,
-      "pipeline_usd_clue": "Solicitud simulada 1M fojas; tres niveles seguridad diferenciados",
-      "priority": 84
+      "pipeline_usd_clue": "1.000.000 unidades base para simulación",
+      "priority": 79
     },
     {
       "participante_id": "17a00f3b-2205-4ff2-9e9f-f66351b6425c",
@@ -349,19 +349,19 @@
       "next_step": null,
       "multiplier_to": null,
       "virgin_market": false,
-      "pipeline_usd_clue": null,
-      "priority": 6
+      "pipeline_usd_clue": "Compra reciente Rosario cerrada con +LATINA",
+      "priority": 13
     },
     {
       "participante_id": "d8c0510f-3475-4147-911d-2d86d01b31bb",
       "participante_nombre": "DIEGO LEANDRO MOLINA",
       "pais_label": "Argentina",
       "classification": "warm",
-      "lead_reason": "Pidió acompañamiento en eventos internacionales (Córdoba/Mendoza); interés en credenciales digitales.",
-      "next_step": "Confirmar participación eventos Córdoba 13-14 ago y Mendoza/Mar del Plata sept 2027.",
-      "multiplier_to": null,
+      "lead_reason": "Invitación a eventos internacionales, interés credenciales con chip/QR",
+      "next_step": "Coordinar presentación Córdoba (13-14 agosto) y Mendoza próximo año",
+      "multiplier_to": "Diego Molina → CAM y CAAm (eventos iberoamericanos Mar del Plata/Bariloche)",
       "virgin_market": false,
-      "pipeline_usd_clue": "Credenciales digitales con chip/QR a nivel nacional (Buenos Aires)",
+      "pipeline_usd_clue": null,
       "priority": 58
     },
     {
@@ -369,120 +369,120 @@
       "participante_nombre": "ALEJANDRINA GARCIA",
       "pais_label": "República Dominicana",
       "classification": "warm",
-      "lead_reason": "Rep Dominicana; interesada en solución; Argentina es faro notarial local.",
-      "next_step": "Seguimiento coordinado con Antonio Rodriguez (Vicepresidente).",
+      "lead_reason": "Interés renovado, referencias a Argentina como modelo",
+      "next_step": null,
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 44
+      "priority": 45
     },
     {
       "participante_id": "739d2bac-ff96-4f79-aaba-254a31e44a3e",
       "participante_nombre": "Maria Belen SAADI BRIZUELA",
       "pais_label": "Argentina",
       "classification": "warm",
-      "lead_reason": "Catamarca urgente necesita reemplazar credenciales (50 escribanos); digital+física.",
-      "next_step": "Pasar propuesta credencial física con versión digital para Catamarca.",
+      "lead_reason": "Necesidad urgente credenciales, cotización pendiente",
+      "next_step": "Enviar propuesta credencial física + digital para Catamarca (50 escribanos)",
       "multiplier_to": null,
       "virgin_market": false,
-      "pipeline_usd_clue": "50 escribanos Catamarca; credenciales PVC actual sin proveedor",
-      "priority": 55
+      "pipeline_usd_clue": null,
+      "priority": 56
     },
     {
       "participante_id": "8172b733-ec6c-41e6-8e81-4faefa4327a5",
       "participante_nombre": "Esc. Carla Consuelo Yave Mayan",
       "pais_label": "Bolivia",
       "classification": "warm",
-      "lead_reason": "Escribana Bolivia interesada; solicita presentación a DIRNOPLU.",
-      "next_step": "Coordinar presentación a DIRNOPLU (macro strategy Bolivia).",
+      "lead_reason": "Interesada en presentar solución a DIRNOPLU",
+      "next_step": "Presentación a DIRNOPLU",
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 40
+      "priority": 50
     },
     {
       "participante_id": "0afa7367-9897-49b8-bcfa-8674436369a9",
       "participante_nombre": "Karolay Rivera Mercado",
       "pais_label": "Bolivia",
       "classification": "hot_lead",
-      "lead_reason": "Bolivia 20% aumento falsificaciones; escritanías guardan archivos históricos; costo actual 0,50 USD/foja.",
-      "next_step": "Contactar para presentación autoridades Bolivia; capitalizar problema seguridad detectado.",
+      "lead_reason": "Alto grado falsificación (20% suba), sistema descentralizado, costo actual 0.50 USD",
+      "next_step": "Presentar solución a autoridades Bolivia",
       "multiplier_to": null,
       "virgin_market": false,
-      "pipeline_usd_clue": "Costo actual 3 bolivianos (0,50 USD/foja); 20% aumento falsificaciones",
-      "priority": 68
+      "pipeline_usd_clue": "Costo actual 0.50 USD por hoja, falsificación 20% aumento",
+      "priority": 76
     },
     {
       "participante_id": "17114a2c-a912-46c7-be42-fd2ffaa8a25f",
       "participante_nombre": "KATIA BEATRIZ AYALA RATTI",
       "pais_label": "Paraguay",
       "classification": "warm",
-      "lead_reason": "Paraguay compra estatal; actualmente sin gran reconocimiento seguridad (USD 0,30/foja).",
-      "next_step": "Evaluar canal estatal; no compradores directo notarios (+595981402228).",
+      "lead_reason": "Precio conocido, compra estatal, seguridad reconocida débil",
+      "next_step": null,
       "multiplier_to": null,
       "virgin_market": false,
-      "pipeline_usd_clue": "1800 guaraníes/hoja (USD 0,30); libros fideicomiso ~70 hojas",
-      "priority": 46
+      "pipeline_usd_clue": "1800 guaraníes (~0.30 USD) por hoja, libro 70 hojas",
+      "priority": 54
     },
     {
       "participante_id": "d412b26e-e630-4a68-aa5e-94ca732c6451",
       "participante_nombre": "César Moscoso",
       "pais_label": "Peru",
       "classification": "hot_lead",
-      "lead_reason": "Tesorero Junta Nacional Perú; ICA gasta USD 1500/mes; presupuesto solicitado (150k/300k).",
-      "next_step": "Entregar presupuesto ICA a Not. Cesar Moscoso; coordinar oportunidad Arequipa/Ayacucho.",
+      "lead_reason": "Tesorero nacional, gasto 1500 USD/mes, cotización solicitada",
+      "next_step": "Enviar presupuesto ICA (150k-300k fojas)",
       "multiplier_to": null,
       "virgin_market": false,
-      "pipeline_usd_clue": "ICA 1500 USD mensuales; 150k y 300k unidades solicitadas",
-      "priority": 86
+      "pipeline_usd_clue": "1500 USD mensuales gasto actual",
+      "priority": 89
     },
     {
       "participante_id": "9a12c3bc-5e3e-41bf-8311-62379413d366",
       "participante_nombre": "Freddy Cyriaque MOKOKO",
       "pais_label": "Congo (Brazzaville)",
-      "classification": "warm",
-      "lead_reason": "Congo sin medidas seguridad actuales; interesado en propuesta; reunión zoom coordinada.",
-      "next_step": "Coordinar zoom; elaborar presupuesto seguridad mínima para Congo.",
+      "classification": "hot_lead",
+      "lead_reason": "Sin seguridad, interesados, zoom coordinado para presupuesto",
+      "next_step": "Coordinar zoom Congo, presupuesto mínima seguridad",
       "multiplier_to": null,
       "virgin_market": true,
       "pipeline_usd_clue": null,
-      "priority": 56
+      "priority": 74
     },
     {
       "participante_id": "b749b86c-1502-421e-802b-c3665be7bf4c",
       "participante_nombre": "Bertrand Eric Fédhéré PANDI",
       "pais_label": "Congo (Brazzaville)",
       "classification": "hot_lead",
-      "lead_reason": "Presidente Congo; sin medidas seguridad; recordó email previo; interesado en presupuesto.",
-      "next_step": "Coordinar zoom presentación; desarrollar propuesta seguridad mínima.",
+      "lead_reason": "Presidente, sin seguridad, zoom coordinado",
+      "next_step": "Coordinar zoom Congo para presupuesto",
       "multiplier_to": null,
       "virgin_market": true,
       "pipeline_usd_clue": null,
-      "priority": 62
+      "priority": 73
     },
     {
       "participante_id": "3ca3db7b-3962-48da-b4bd-c9ac3bc29dc1",
       "participante_nombre": "Patric Sindika Loubota",
       "pais_label": "Congo",
-      "classification": "warm",
-      "lead_reason": "General Syndic Congo; sin medidas seguridad; interesado en propuesta mínima.",
-      "next_step": "Zoom coordinado; presupuesto seguridad básica para Congo.",
+      "classification": "hot_lead",
+      "lead_reason": "General Syndic, sin seguridad, zoom coordinado",
+      "next_step": "Coordinar zoom Congo para presupuesto",
       "multiplier_to": null,
       "virgin_market": true,
       "pipeline_usd_clue": null,
-      "priority": 54
+      "priority": 75
     },
     {
       "participante_id": "4c49655d-e790-4986-b732-c7419b5bb707",
       "participante_nombre": "Ratiba SEKKATE",
       "pais_label": "Marruecos",
-      "classification": "hot_lead",
-      "lead_reason": "Primer notario Marruecos; posicionamiento estratégico; ayudará reunión Consejo.",
-      "next_step": "Coordinar reunión Consejo Nacional Notarios Marruecos a través de Ratiba Sekkate.",
-      "multiplier_to": "Ratiba Sekkate → Consejo Nacional Orden Notarios Marruecos (acceso decisorio)",
+      "classification": "warm",
+      "lead_reason": "Primer notario Marruecos, acceso consejo",
+      "next_step": "Coordinar reunión consejo Marruecos",
+      "multiplier_to": "Ratiba Sekkate → Conseil Nacional Marruecos",
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 67
+      "priority": 62
     },
     {
       "participante_id": "4bff6f0d-8d76-4e2a-a2f1-9bdace1f2d36",
@@ -494,87 +494,87 @@
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 12
+      "priority": 11
     },
     {
       "participante_id": "b3d4f40f-ef64-47dd-916c-8e023c3e45dd",
       "participante_nombre": "Silvana España.",
       "pais_label": "Bolivia",
       "classification": "warm",
-      "lead_reason": "Bolivia; fojas interesan; sugiere circular DIRNOPLU; sistema requiere ajuste diseño/papel.",
-      "next_step": "Contactar DIRNOPLU para circular autorización uso fojas; evaluar cambio papel Bond.",
+      "lead_reason": "Interés importante, requiere cambios software o foja sin diseño",
+      "next_step": "Evaluar modificación software o foja blank para Bolivia",
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 47
+      "priority": 60
     },
     {
       "participante_id": "e8278ba5-754e-424a-ab4c-644ec838d3d7",
       "participante_nombre": "Ahmet ALICI",
       "pais_label": "Turquía",
       "classification": "warm",
-      "lead_reason": "Turquía miembro CG; aceptó contacto posterior; consumo muy alto (40M/año).",
-      "next_step": "Contactar con teléfono alterno proporcionado; seguimiento a mercado Turquía.",
+      "lead_reason": "Contactable, conversación corta",
+      "next_step": "Contacto pendiente Turquía",
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 43
+      "priority": 40
     },
     {
       "participante_id": "2304eaf2-f99e-4f46-83d8-f31fd8681b9d",
       "participante_nombre": "José Ignacio GONZALEZ ALVAREZ",
       "pais_label": "España",
-      "classification": "social",
-      "lead_reason": null,
+      "classification": "warm",
+      "lead_reason": "Maravillado, Real Casa Moneda y privados como impresores",
       "next_step": null,
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 9
+      "priority": 46
     },
     {
       "participante_id": "b73a4f88-6ba4-4027-9fe7-3a66f6ad1266",
       "participante_nombre": "Alexander MIKLOS",
       "pais_label": "Austria",
       "classification": "warm",
-      "lead_reason": "Austria; presentará brochure en colegio; contactará luego para seguimiento.",
-      "next_step": "Aguardar contacto Austria post presentación interna; seguimiento mercado europeo.",
+      "lead_reason": "Presentará en colegio, contacto posterior pendiente",
+      "next_step": "Contacto Austria pendiente tras presentación",
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 37
+      "priority": 41
     },
     {
       "participante_id": "7ef8afa1-e4c2-47cb-8c34-bbd456c9c77b",
       "participante_nombre": "ENRIQUE BENJAMIN SOLIS ARZOLA",
       "pais_label": "México",
       "classification": "warm",
-      "lead_reason": "México sorprendido cantidad medidas; preguntó por exportación; consulta viabilidad.",
-      "next_step": "Contactar para aclarar capacidad exportación México; evaluar regulación local.",
+      "lead_reason": "Sorprendido medidas seguridad, preguntó exportación México",
+      "next_step": null,
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 49
+      "priority": 51
     },
     {
       "participante_id": "ab29e75f-cf63-4c51-84fb-7f827afdf288",
       "participante_nombre": "Luis Alberto Salas Quispe",
       "pais_label": "Perú",
-      "classification": "info_only",
-      "lead_reason": null,
+      "classification": "warm",
+      "lead_reason": "Volumen claro extraprotovolares, 150k/año",
       "next_step": null,
       "multiplier_to": null,
       "virgin_market": false,
-      "pipeline_usd_clue": "Callao: 150k/año documentos extraprotovolares; 150k protocolo",
-      "priority": 18
+      "pipeline_usd_clue": "150.000 documentos extraprotovolares anuales",
+      "priority": 53
     },
     {
       "participante_id": "a299def1-1237-4d83-a9d9-4a168e24ca1c",
       "participante_nombre": "Giovanni LIOTTA",
       "pais_label": "Italia",
       "classification": "warm",
-      "lead_reason": "Italia; mostró interés medidas seguridad; pendiente envío mensaje seguimiento.",
-      "next_step": "Enviar mensaje seguimiento Italia; evaluar mercado europeo alto consumo.",
+      "lead_reason": "Mostró interés, brochure entregado",
+      "next_step": "Mensaje pendiente envío",
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
@@ -589,20 +589,20 @@
       "next_step": null,
       "multiplier_to": null,
       "virgin_market": false,
-      "pipeline_usd_clue": "Sistema Colibrí y Simplo en Bolivia; imprimen en Bond",
-      "priority": 17
+      "pipeline_usd_clue": "Sistemas Simplo/Colibrí con QR y hash en Bolivia",
+      "priority": 15
     },
     {
       "participante_id": "5fed6b2f-bf3a-45ad-a676-ee3d4bfcff5a",
       "participante_nombre": "CARLOS ALBERTO CABALLERO BURGOS",
       "pais_label": "Perú",
-      "classification": "social",
-      "lead_reason": null,
+      "classification": "warm",
+      "lead_reason": "Admirado muestra, conoce seguridad, intercambio tarjetas",
       "next_step": null,
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 7
+      "priority": 47
     },
     {
       "participante_id": "a121f741-e982-46e8-a387-64c46f9a903b",
@@ -610,31 +610,31 @@
       "pais_label": "Rumania",
       "classification": "info_only",
       "lead_reason": null,
-      "next_step": "Evaluar Rumania; sin seguridad actual; no decisora contactada.",
+      "next_step": null,
       "multiplier_to": null,
       "virgin_market": true,
-      "pipeline_usd_clue": null,
-      "priority": 16
+      "pipeline_usd_clue": "Papel común sin seguridad, 2800 notarios",
+      "priority": 19
     },
     {
       "participante_id": "157a8af1-5d3d-4e76-8114-6414ae50f35c",
       "participante_nombre": "KA ALIOUNE",
       "pais_label": "Senegal",
       "classification": "hot_lead",
-      "lead_reason": "Senegal ex presidente; presupuesto solicitado; presentación a presidenta confirmada.",
-      "next_step": "Entregar presupuesto (1k/2k unidades) a ealioune.badara.ka67@gmail.com; coordinar presidenta.",
-      "multiplier_to": "KA Alioune → Presidenta Senegal (presentación prometida)",
+      "lead_reason": "Ex presidente, cotización solicitada, muestra entregada",
+      "next_step": "Enviar presupuesto Senegal (1000-2000 fojas)",
+      "multiplier_to": "KA Alioune → Presidente actual Senegal",
       "virgin_market": false,
-      "pipeline_usd_clue": "Solicitud 1k y 2k unidades presupuesto",
-      "priority": 76
+      "pipeline_usd_clue": "1000 y 2000 unidades solicitadas",
+      "priority": 68
     },
     {
       "participante_id": "59ecb22a-0ab9-4127-a7ec-85a1f8af49e6",
       "participante_nombre": "Emilie BA",
       "pais_label": "Senegal",
       "classification": "warm",
-      "lead_reason": "Senegal miembro CG; mostró interés; pendiente coordinación presidenta.",
-      "next_step": "Coordinar con presidenta Senegal a través de contacto anterior.",
+      "lead_reason": "Mostró interés, coordinación pendiente",
+      "next_step": "Coordinar presentación con presidenta Senegal",
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
@@ -644,81 +644,81 @@
       "participante_id": "62f52aef-d5f3-4494-9e4f-45d7a3f15deb",
       "participante_nombre": "Blanca Elena Málaga Aliaga",
       "pais_label": "Bolivia",
-      "classification": "social",
-      "lead_reason": null,
+      "classification": "warm",
+      "lead_reason": "Mostró medidas seguridad",
       "next_step": null,
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 4
+      "priority": 37
     },
     {
       "participante_id": "731a6b60-b2e4-457d-8db6-ff275993bae6",
       "participante_nombre": "Tania Elizabeth Hassenteufel Loayza",
       "pais_label": "Bolivia",
-      "classification": "social",
-      "lead_reason": null,
+      "classification": "warm",
+      "lead_reason": "Mostró medidas seguridad, agradecida",
       "next_step": null,
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 5
+      "priority": 38
     },
     {
       "participante_id": "3c9d9b04-da70-4fe1-bc4c-032d28854526",
       "participante_nombre": "Aïda DIAWARA DIAGNE",
       "pais_label": "Senegal",
       "classification": "hot_lead",
-      "lead_reason": "Secretario Senegal; presentó presidenta; presupuesto coordinado con Mario.",
-      "next_step": "Confirmar presupuesto Senegal; coordinar con presidenta (antes sábado).",
-      "multiplier_to": "Aïda Diawara → Presidenta Senegal (presentación completada)",
+      "lead_reason": "Secretario, presentó presidenta, presupuesto coordinado",
+      "next_step": "Enviar presupuesto Senegal",
+      "multiplier_to": "Aïda Diawara → Presidenta Senegal",
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 71
+      "priority": 66
     },
     {
       "participante_id": "708986b9-9087-442b-a7e7-942904e8753b",
       "participante_nombre": "Daniel-Sédar SENGHOR",
       "pais_label": "Senegal",
-      "classification": "warm",
-      "lead_reason": "Presidente honorario UINL; ex presidente Senegal; contactará presidente actual.",
-      "next_step": "Esperar contacto presidente actual Senegal; leveraging red UINL.",
-      "multiplier_to": "Daniel-Sédar Senghor → Presidente Senegal actual (referencia UINL)",
+      "classification": "info_only",
+      "lead_reason": null,
+      "next_step": null,
+      "multiplier_to": "Daniel Senghor → Presidente actual Senegal (contacto posterior)",
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 41
+      "priority": 21
     },
     {
       "participante_id": "404abb71-8921-44a1-b692-9bd97a472fb6",
       "participante_nombre": "ALFONSO AVILA FADUL",
       "pais_label": "Colombia",
       "classification": "hot_lead",
-      "lead_reason": "Presidente Costa colombiana; insistió cotización; coordina con Héctor Sintura.",
-      "next_step": "Enviar presupuestos simulados bajo/medio/alto por 1M fojas a Alfonso Ávila.",
+      "lead_reason": "Coordinador comercial, insistencia en precio, presidente es decisor",
+      "next_step": "Enviar presupuestos Colombia simulación 3 niveles (bajo/medio/alto)",
       "multiplier_to": null,
       "virgin_market": false,
-      "pipeline_usd_clue": "Solicitud simulada 1M fojas; tres niveles seguridad",
-      "priority": 81
+      "pipeline_usd_clue": "1.000.000 unidades para simulación",
+      "priority": 80
     },
     {
       "participante_id": "f32126d2-07a9-4da2-9600-aee8706f856f",
       "participante_nombre": "Jaime Casas Madero",
       "pais_label": "Presidente del Colegio de Notarios del Estados Zacatecas",
       "classification": "warm",
-      "lead_reason": "México (Zacatecas) presidente colegio; muy interesado; competencia actual con medidas insuficientes.",
-      "next_step": "Contactar para propuesta superior a actual sponsor eventos.",
+      "lead_reason": "Interés fuerte, 4800 notarios",
+      "next_step": null,
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 50
+      "priority": 49
     },
     {
       "participante_id": "4ab9817e-b201-4039-bf6a-5f182c637989",
       "participante_nombre": "Liliana Rubí Amas",
       "pais_label": "Bolivia",
       "classification": "warm",
-      "lead_reason": "Bolivia muy interesada; demostración completa brochure seguridad.",
-      "next_step": "Referencia macro strategy DIRNOPLU Bolivia.",
+      "lead_reason": "Muy interesada, brochure entregado",
+      "next_step": null,
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
@@ -729,60 +729,60 @@
       "participante_nombre": "Oliver Misael",
       "pais_label": "Bolivia",
       "classification": "warm",
-      "lead_reason": "Bolivia muy interesado producto; demostración seguridad completada.",
-      "next_step": "Referencia macro strategy DIRNOPLU Bolivia.",
-      "multiplier_to": null,
-      "virgin_market": false,
-      "pipeline_usd_clue": null,
-      "priority": 39
-    },
-    {
-      "participante_id": "3cefc085-8509-4529-8760-d9b990391da6",
-      "participante_nombre": "MARÍA TEREZA GARRÓN YUCRA",
-      "pais_label": "Bolivia",
-      "classification": "warm",
-      "lead_reason": "Bolivia; demostración seguridad; agradecida con producto evaluación positiva.",
-      "next_step": "Referencia macro strategy DIRNOPLU Bolivia.",
+      "lead_reason": "Muy interesado, brochure entregado",
+      "next_step": null,
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
       "priority": 40
     },
     {
+      "participante_id": "3cefc085-8509-4529-8760-d9b990391da6",
+      "participante_nombre": "MARÍA TEREZA GARRÓN YUCRA",
+      "pais_label": "Bolivia",
+      "classification": "warm",
+      "lead_reason": "Agradecida, producto excelente",
+      "next_step": null,
+      "multiplier_to": null,
+      "virgin_market": false,
+      "pipeline_usd_clue": null,
+      "priority": 41
+    },
+    {
       "participante_id": "3e8a74fa-501f-41d7-a426-401c0636b52a",
       "participante_nombre": "ŠáRKA TLášKOVá",
       "pais_label": "República Checa",
       "classification": "warm",
-      "lead_reason": "Rep Checa; hablante de 6 idiomas; presentará brochure en colegio; contactable tras tiempo.",
-      "next_step": "Seguimiento mercado europeo Rep Checa; aguardar presentación interna.",
+      "lead_reason": "Presentará en colegio, contactable en tiempo",
+      "next_step": "Contacto República Checa posterior",
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 38
+      "priority": 43
     },
     {
       "participante_id": "5ae04acb-7c0f-4b1a-89e8-2282f786e053",
       "participante_nombre": "Darko ĆURIĆ",
       "pais_label": "Montenegro",
       "classification": "warm",
-      "lead_reason": "Montenegro presidente; pequeño mercado (50 notarios); interesado; contacto posterior.",
-      "next_step": "Seguimiento Montenegro; evaluar oportunidad miniaturizada.",
+      "lead_reason": "Presidente, buenos contactos, seguimiento pendiente",
+      "next_step": "Seguimiento Montenegro",
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 35
+      "priority": 42
     },
     {
       "participante_id": "1570f14d-974e-4305-85f2-3fd9e5dabebb",
       "participante_nombre": "Homero López",
       "pais_label": "Ecuador",
       "classification": "hot_lead",
-      "lead_reason": "Ecuador presidente; cambio de fojas en progreso; interés confirmado; plazo post 20 junio.",
-      "next_step": "Contactar post 20 junio; presentar a comisión Ecuador (no solo decisor).",
+      "lead_reason": "Presidente, justo cambio proveedor, contacto post 20/6 confirmado",
+      "next_step": "Contactar Ecuador semana 20 de junio para presentación comisión",
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 73
+      "priority": 67
     },
     {
       "participante_id": "1d397c5a-6159-4358-83e2-c3be5a85df55",
@@ -794,19 +794,19 @@
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 11
+      "priority": 9
     },
     {
       "participante_id": "4a34c860-9acd-47c2-8fa5-84374c484aab",
       "participante_nombre": "Paola Rodriguez Zaconeta",
       "pais_label": "Bolivia",
       "classification": "warm",
-      "lead_reason": "Bolivia ex presidenta La Paz; solicita disertación virtual para notarios La Paz.",
-      "next_step": "Organizar presentación virtual La Paz; expandir reach notariado Bolivia.",
+      "lead_reason": "Ex presidenta La Paz, solicita disertación virtual",
+      "next_step": "Coordinar presentación virtual para notarios La Paz",
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 53
+      "priority": 55
     },
     {
       "participante_id": "6e9f8669-add4-414f-aa4e-66194c85daf5",
@@ -818,19 +818,19 @@
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 13
+      "priority": 17
     },
     {
       "participante_id": "7986e4fe-f139-4fda-918a-d5db0838f3bf",
       "participante_nombre": "Msc. Lorena Isabel Flores Estrada",
       "pais_label": "Guatemala",
       "classification": "warm",
-      "lead_reason": "Guatemala; ministerio compra fojas; interesada; estaría en La Paz principios junio.",
-      "next_step": "Contactar Guatemala coordinando visita/reunión principios junio.",
+      "lead_reason": "Ministerio Justicia compra, interesada",
+      "next_step": "Contacto Guatemala principios junio",
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 51
+      "priority": 57
     },
     {
       "participante_id": "29de9c6c-7410-47af-9043-5d81cc48f008",
@@ -842,27 +842,27 @@
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 12
+      "priority": 7
     },
     {
       "participante_id": "4bb689bb-0cfc-4b8b-a5e2-0522bd06dae2",
       "participante_nombre": "CLARA IVONNE PHILLIPS DE SAUCEDO",
       "pais_label": "Bolivia",
       "classification": "warm",
-      "lead_reason": "Bolivia; observó seguridad; solicita presentación DIRNOPLU.",
-      "next_step": "Coordinar presentación DIRNOPLU (macro strategy Bolivia).",
+      "lead_reason": "Sorprendida, sugiere contacto DIRNOPLU",
+      "next_step": "Contacto DIRNOPLU pendiente",
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 42
+      "priority": 59
     },
     {
       "participante_id": "97d82564-50ff-4d0f-bdea-09c8dec68d40",
       "participante_nombre": "Víctor Manuel Mostajo Rojas",
       "pais_label": "Bolivia",
       "classification": "hot_lead",
-      "lead_reason": "DIRNOPLU director general; reunión concretada viernes; licitación en 3 meses; propuesta solicitada.",
-      "next_step": "Estructurar propuesta formal DIRNOPLU; cumplir requisitos (CUIT/NIT local + establecimiento).",
+      "lead_reason": "Director DIRNOPLU, reunión completada, licitación 3 meses, interesado",
+      "next_step": "Enviar propuesta oficial con NIT y establecimiento Bolivia",
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
@@ -878,119 +878,119 @@
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 6
+      "priority": 5
     },
     {
       "participante_id": "fd594c09-f6bd-486a-aec4-87b1885fc1d5",
       "participante_nombre": "Erik Torres",
       "pais_label": "Mexico",
       "classification": "hot_lead",
-      "lead_reason": "México San Francisco presidente; presupuesto solicitado (2M+1M unidades); bonificado.",
-      "next_step": "Entregar presupuesto Erik Torres; especificaciones GL130 con holograma Kurz.",
+      "lead_reason": "Presidente colegio, cotización solicitada, volumen importante",
+      "next_step": "Enviar presupuesto México San Francisco (2M+1M fojas)",
       "multiplier_to": null,
       "virgin_market": false,
-      "pipeline_usd_clue": "2M testimonios + 1M folios interacción; holograma personalizado",
-      "priority": 79
+      "pipeline_usd_clue": "2.000.000 y 1.000.000 unidades",
+      "priority": 85
     },
     {
       "participante_id": "e8cbb9b5-fede-4585-aff7-06bc9db2d6f1",
       "participante_nombre": "Stella Sabaye Kaba Mboko",
       "pais_label": "Congo",
       "classification": "hot_lead",
-      "lead_reason": "Congo presidenta; presupuesto solicitado (1k/2k fojas+marbetes); mapa Congo en holograma.",
-      "next_step": "Entregar presupuesto Stella Sabaye (stellask.notaire@outlook.fr); personalizar holograma.",
+      "lead_reason": "Sin seguridad, cotización solicitada",
+      "next_step": "Enviar presupuesto Congo (fojas + etiquetas, 1k-2k)",
       "multiplier_to": null,
       "virgin_market": true,
-      "pipeline_usd_clue": "1k y 2k fojas + 1k y 2k etiquetas certificación; holograma mapa Congo",
-      "priority": 83
+      "pipeline_usd_clue": "1000 y 2000 unidades fojas y etiquetas",
+      "priority": 81
     },
     {
       "participante_id": "f9869f72-58f9-4b85-be7d-7753fa98f281",
       "participante_nombre": "Fulgence AHOBAUT-BESSET",
       "pais_label": "Costa de Marfil",
       "classification": "hot_lead",
-      "lead_reason": "Costa de Marfil vicepresidente; presupuesto solicitado (500k/1M fojas); especificaciones completas.",
-      "next_step": "Entregar presupuesto Fulgence Ahobaut (500k y 1M); GL130 con offset estándar.",
+      "lead_reason": "Vicepresidente, cotización solicitada, volumen importante",
+      "next_step": "Enviar presupuesto Costa Marfil (500k-1M fojas)",
       "multiplier_to": null,
       "virgin_market": false,
-      "pipeline_usd_clue": "500k y 1M fojas seguridad notarial solicitadas",
-      "priority": 74
+      "pipeline_usd_clue": "500.000 y 1.000.000 unidades",
+      "priority": 77
     },
     {
       "participante_id": "d585d179-3c98-41d6-9b03-6cd573c21f26",
       "participante_nombre": "MASSIEL TOUDJOUM MELYOEL",
       "pais_label": "Chad",
       "classification": "warm",
-      "lead_reason": "Chad miembro CG; mostró interés; brochure entregado; contacto posterior prometido.",
-      "next_step": "Contactar viernes 21/5 como se coordinó.",
+      "lead_reason": "Miembro comisión, mostró interés, brochure",
+      "next_step": "Contacto pendiente viernes 21/5",
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 37
+      "priority": 34
     },
     {
       "participante_id": "a89ef751-a8ab-49a3-9946-a0efa451f27b",
       "participante_nombre": "Mahoua KONE",
       "pais_label": "Costa de Marfil",
       "classification": "warm",
-      "lead_reason": "Costa de Marfil vicepresidenta; mostró interés; brochure entregado; salida no coordinó cierre.",
-      "next_step": "Contacto post congreso; seguimiento Costa de Marfil.",
-      "multiplier_to": null,
-      "virgin_market": false,
-      "pipeline_usd_clue": null,
-      "priority": 36
-    },
-    {
-      "participante_id": "5f07c549-1275-45c6-9bfd-8cf950564794",
-      "participante_nombre": "Grâce NKAKE BOLLANGA",
-      "pais_label": "Camerún",
-      "classification": "warm",
-      "lead_reason": "Camerún miembro CTC; mostró interés parcial; sin cierre específico.",
-      "next_step": "Contacto post congreso; seguimiento Camerún.",
+      "lead_reason": "Vicepresidenta, mostró interés",
+      "next_step": "Contacto pendiente Costa Marfil",
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
       "priority": 33
     },
     {
-      "participante_id": "339e2d45-1edf-4373-a7b9-e24c1d971bdd",
-      "participante_nombre": "César R. Aliaga Caballero",
-      "pais_label": "Peru",
+      "participante_id": "5f07c549-1275-45c6-9bfd-8cf950564794",
+      "participante_nombre": "Grâce NKAKE BOLLANGA",
+      "pais_label": "Camerún",
       "classification": "info_only",
       "lead_reason": null,
       "next_step": null,
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 14
+      "priority": 23
+    },
+    {
+      "participante_id": "339e2d45-1edf-4373-a7b9-e24c1d971bdd",
+      "participante_nombre": "César R. Aliaga Caballero",
+      "pais_label": "Peru",
+      "classification": "warm",
+      "lead_reason": "De Lima capital, conversador, brochure entregado",
+      "next_step": null,
+      "multiplier_to": null,
+      "virgin_market": false,
+      "pipeline_usd_clue": null,
+      "priority": 31
     },
     {
       "participante_id": "4de08e31-7d29-472c-a8ca-3a8922a5f25f",
       "participante_nombre": "Yerko Fabricio Paz Huet",
       "pais_label": "Bolivia",
-      "classification": "hot_lead",
-      "lead_reason": "DIRNOPLU director evaluación; participó reunión viernes; decisor técnico en licitación.",
-      "next_step": "Contacto post reunión; validar especificaciones técnicas propuesta DIRNOPLU.",
+      "classification": "warm",
+      "lead_reason": "Director DIRNOPLU, reunión completada",
+      "next_step": "Seguimiento propuesta DIRNOPLU",
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 70
+      "priority": 64
     },
     {
       "participante_id": "0971c8e8-d355-44fd-af18-1efff17353f1",
       "participante_nombre": "Pierre-Bertrand NYAMSI HENKO",
       "pais_label": "Camerún",
       "classification": "warm",
-      "lead_reason": "Camerún miembro CTC; mostró interés; brochures entregados; contacto viernes prometido.",
-      "next_step": "Contactar viernes 21/5 según coordinado.",
+      "lead_reason": "Mostró seguridad, llevó brochures, contacto posterior confirmado",
+      "next_step": "Contacto Camerún viernes 21/5",
       "multiplier_to": null,
       "virgin_market": false,
       "pipeline_usd_clue": null,
-      "priority": 38
+      "priority": 32
     }
   ],
   "global": {
-    "hot_leads_count": 24,
+    "hot_leads_count": 23,
     "countries_with_hot_leads": [
       "Bolivia",
       "Colombia",
@@ -999,7 +999,6 @@
       "Costa de Marfil",
       "Ecuador",
       "Guinea",
-      "Marruecos",
       "Mexico",
       "Peru",
       "Perú",
@@ -1015,9 +1014,9 @@
       "Puerto Rico",
       "Rumania"
     ],
-    "next_steps_count": 63,
-    "multipliers_count": 12,
-    "headline": "Congreso UINL Bolivia 2026: 10 hot_leads con presupuestos solicitados (Guinea, R.D., Perú, Colombia, México, Senegal, Costa Marfil, Congo), +1 oportunidad mega-estratégica DIRNOPLU Bolivia lista licitación. Mercados vírgenes (Guinea, Puerto Rico, Congo, Benin) sin seguridad; competidores identificados (Cadenas, China). Próximos 60 días: entregas presupuestos + coordinación DIRNOPLU + eventos internacionales (Córdoba, Ecuador, Guatemala)."
+    "next_steps_count": 43,
+    "multipliers_count": 13,
+    "headline": "Congreso UINL Bolivia 2026: +LATINA capturó 20+ hot leads con 10 presupuestos solicitados (Guinea, R.Dominicana, Congo, Perú, Colombia, México, Senegal, Costa Marfil) y reunión confirmada con DIRNOPLU para Bolivia—mercados vírgenes africanos + clientes existentes en expansión dominan la oportunidad."
   },
-  "cost_usd": 0.0953
+  "cost_usd": 0.089
 }
